@@ -1,0 +1,730 @@
+
+{"result": "{'API': ['getAccountID'], 'parameters': [{\"customerID\": \"123456\"}]} \n", "match": [true, false, false]}
+{"result": "{'API': ['getAccountBalance'], 'parameters': [{\"accountID\": \"987654\"}]} \n", "match": [true, true, true]}
+{"result": "{'API': ['getTransactionHistory'], 'parameters': [{'accountID': '123456', 'startDate': '2024-01-01', 'endDate': '2024-12-31'}]} \n", "match": [true, true, true]}
+{"result": "{'API': ['initiateTransfer'], 'parameters': [{\"fromAccountID\": \"123456\", \"toAccountID\": \"654321\", \"amount\": \"500\", \"currency\": \"USD\"}]} \n", "match": [true, true, true]}
+{"result": "{'API': ['getTransferStatus'], 'parameters': [{\"transferID\": \"T12345\"}]} \n", "match": [true, true, true]}
+{"result": "{'API': ['cancelTransfer'], 'parameters': [{\"transferID\": \"T54321\"}]} \n", "match": [true, true, true]}
+{"result": "{'API': ['getAccountDetails'], 'parameters': [{\"accountID\": \"987654\"}]} \n", "match": [true, true, true]}
+{"result": "{'API': ['updateAccountDetails'], 'parameters': [{\"accountID\": \"123456\", \"accountDetails\": \"$$$\"} ] } \n", "match": [true, true, true]}
+{"result": "{'API': ['getAccountDetails'], 'parameters': [\n{'accountID': '123456'}\n]}", "match": [true, true, false]}
+{"result": "{'API': ['updateAccountDetails'], 'parameters': [{\"accountID\": \"654321\"}, {\"holderDetails\": \"$$$\"} ] } \n", "match": [true, false, false]}
+{"result": "{'API': ['getAvailableAccounts'], 'parameters': [{\"customerID\": \"C98765\"}]} \n", "match": [true, true, true]}
+{"result": "{'API': ['getLoanDetails'], 'parameters': [{'loanID': 'L12345'}]} \n", "match": [true, true, true]}
+{"result": "```json\n{'API': ['applyForLoan'], 'parameters': [{\"customerID\": \"C98765\", \"loanAmount\": \"10000\", \"loanType\": \"personal\"}]}\n```", "match": [false, false, false]}
+{"result": "{'API': ['getLoanStatus'], 'parameters': [{\"loanID\": \"L12345\"}]} \n", "match": [true, true, true]}
+{"result": "```json\n{'API': ['makeLoanPayment'], 'parameters': [{\"loanID\": \"L54321\", \"paymentAmount\": \"500\", \"paymentMethod\": \"credit card\"}]}\n```", "match": [false, false, false]}
+{"result": "{'API': ['getCreditCardDetails'], 'parameters': [{\"creditCardNumber\": \"CC12345\"}]} \n", "match": [true, true, true]}
+{"result": "{'API': ['getCreditCardStatement'], 'parameters': [{\"creditCardNumber\": \"CC98765\", \"statementPeriod\": \"January 2024\"}]} \n", "match": [true, true, true]}
+{"result": "```json\n{\n\"API\": [\"makeCreditCardPayment\"],\n\"parameters\": [\n{\"creditCardNumber\": \"CC54321\", \"paymentAmount\": \"200\", \"paymentMethod\": \"$$$\"}\n]\n}\n```", "match": [false, false, false]}
+{"result": "{'API': ['getCreditLimit'], 'parameters': [{\"creditCardNumber\": \"CC12345\"}]} \n", "match": [true, true, true]}
+{"result": "{'API': ['increaseCreditLimit'], 'parameters': [{\"creditCardNumber\": \"CC54321\", \"newLimit\": \"10000\"}]} \n", "match": [true, true, true]}
+{"result": "{'API': ['blockCreditCard'], 'parameters': [{\"creditCardNumber\": \"CC12345\"}]} \n", "match": [true, true, true]}
+{"result": "{'API': ['unblockCreditCard'], 'parameters': [{\"creditCardNumber\": \"CC54321\"}]} \n", "match": [true, true, true]}
+{"result": "{'API': ['getFixedDepositDetails'], 'parameters': [{\"fixedDepositID\": \"FD12345\"}]} \n", "match": [true, true, true]}
+{"result": "{'API': ['openFixedDeposit'], 'parameters': [{\"accountID\": \"$$$\"}, {\"depositAmount\": \"10000\"}, {\"termLength\": \"12\"}, {\"interestRate\": \"2.5\"}]} \n", "match": [true, false, false]}
+{"result": "{'API': ['closeFixedDeposit'], 'parameters': [{\"fixedDepositID\": \"FD54321\"}]} \n", "match": [true, true, true]}
+{"result": "{'API': ['getRecurringDepositDetails'], 'parameters': [{\"recurringDepositID\": \"RD12345\"}]} \n", "match": [true, true, true]}
+{"result": "{'API': ['openRecurringDeposit'], 'parameters': [{\"customerID\": \"$$$\"}, {\"monthlyInstallment\": \"500\"}, {\"termLength\": \"12\"}]} \n", "match": [true, false, false]}
+{"result": "{'API': ['closeRecurringDeposit'], 'parameters': [{\"recurringDepositID\": \"RD54321\"}]} \n", "match": [true, true, true]}
+{"result": "{'API': ['getLoanRepaymentSchedule'], 'parameters': [{\"loanID\": \"L12345\"}]} \n", "match": [true, true, true]}
+{"result": "{'API': ['getInvestmentPortfolio'], 'parameters': [{\"customerID\": \"C98765\"}]} \n", "match": [true, true, true]}
+{"result": "```json\n{'API': ['buyInvestment'], 'parameters': [{\"customerID\": \"C98765\", \"investmentID\": \"I12345\", \"amount\": \"5000\"}]}\n```", "match": [false, false, false]}
+{"result": "{'API': ['sellInvestment'], 'parameters': [{\"customerID\": \"C98765\"}, {\"investmentID\": \"I54321\"}, {\"amount\": \"2000\"}]} \n", "match": [true, false, false]}
+{"result": "{'API': ['getInvestmentDetails'], 'parameters': [{\"investmentID\": 'I12345'}]} \n", "match": [true, true, true]}
+{"result": "{'API': ['getInsurancePolicyDetails'], 'parameters': [{\"policyID\": \"P12345\"}]} \n", "match": [true, true, true]}
+{"result": "{'API': ['applyForInsurance'], 'parameters': [{\"customerID\": \"$$$\"}, {\"insuranceType\": \"life\"}, {\"coverageAmount\": \"100,000\"}]} \n", "match": [true, false, false]}
+{"result": "{'API': ['getInsuranceStatus'], 'parameters': [{\"claimID\": \"CL12345\"}]} \n", "match": [true, true, false]}
+{"result": "{'API': ['fileInsuranceClaim'], 'parameters': [{\"policyID\": \"P54321\"}, {\"claimDetails\": \"$$$\"} ] } \n", "match": [true, false, false]}
+{"result": "{\n\"API\": [\n\"payInsurancePremium\"\n],\n\"parameters\": [\n{\n\"policyID\": \"P12345\",\n\"amount\": \"500\",\n\"paymentMethod\": \"creditCard 51110520242992\"\n}\n]\n} \n", "match": [true, true, true]}
+{"result": "{'API': ['getMortgageDetails'], 'parameters': [{\"mortgageID\": \"M12345\"}]} \n", "match": [true, true, true]}
+{"result": "{'API': ['applyForMortgage'], 'parameters': [{'customerID': 'C98765', 'propertyValue': '400000', 'loanAmount': '300000', 'termLength': '$$$'}]} \n", "match": [true, true, true]}
+{"result": "{'API': ['getTransactionHistory'], 'parameters': [{\"accountID\": \"123456\", \"startDate\": \"$$$\", \"endDate\": \"$$$\"} ] } \n", "match": [true, false, false]}
+{"result": "{'API': ['initiateTransfer', 'getTransferStatus'], 'parameters': [{\"accountIDFrom\": \"123456\", \"amount\": \"1000\", \"currency\": \"USD\"}, {\"transferID\": \"$$$\"} ] } \n", "match": [true, false, false]}
+{"result": "```json\n{\n\"API\": [\"makeLoanPayment\"],\n\"parameters\": [{\"loanID\": \"L12345\", \"paymentAmount\": \"500\", \"paymentMethod\": \"$$$\"} ]\n}\n```", "match": [false, false, false]}
+{"result": "{'API': ['getCreditLimit'], 'parameters': [{\"creditCardNumber\": \"CC54321\"}]} \n", "match": [true, false, false]}
+{"result": "```json\n{'API': ['getFixedDepositDetails'], 'parameters': [{\"fixedDepositID\": \"987654\"}]}\n```", "match": [false, false, false]}
+{"result": "{'API': ['orderNewATMCard'], 'parameters': [{\"accountID\": \"$$$\"}]} \n", "match": [true, false, false]}
+{"result": "{'API': ['getOverdraftLimit'], 'parameters': [{\"accountID\": \"987654\"}]}", "match": [true, false, false]}
+{"result": "```json\n{\n\"API\": [\"makeLoanPayment\"],\n\"parameters\": [\n  {\"loanID\": \"L12345\", \"paymentAmount\": \"1000\", \"paymentMethod\": \"$$$\"}\n]\n}\n```", "match": [false, false, false]}
+{"result": "{'API': ['getAccountDetails'], 'parameters': [{\"accountID\": \"987654\"}]} \n", "match": [true, false, false]}
+{"result": "{'API': ['getLoanStatus'],'parameters': [{\"loanID\": \"C12345\"}]} \n", "match": [true, false, false]}
+{"result": "{'API': ['buyInvestment'], 'parameters': [{\"customerID\": \"C12345\", \"investmentID\": \"I12345\", \"amount\": \"2000\"}]} \n", "match": [true, false, false]}
+{"result": "```json\n{'API': ['makeCreditCardPayment'], 'parameters': [{\"creditCardNumber\": \"CC54321\", \"paymentAmount\": \"300\", \"paymentMethod\": \"$$$\"} ] }\n```", "match": [false, false, false]}
+{"result": "```json\n{'API': ['closeRecurringDeposit'], 'parameters': [{\"recurringDepositID\": \"RD54321\"}]}\n```", "match": [false, false, false]}
+{"result": "{'API': ['increaseOverdraftLimit'], 'parameters': [{\"accountID\": \"987654\"}, {\"newLimit\": \"$$$\"} ] } \n", "match": [true, false, false]}
+{"result": "{'API': ['increaseCreditLimit'], 'parameters': [{\"creditCardNumber\": \"4648594508297258\", \"newLimit\": \"10000\"}]} \n", "match": [true, false, false]}
+{"result": "{'API': ['getTransactionHistory'], 'parameters': [{\"accountID\": \"123456789\", \"startDate\": \"2023-09-01\", \"endDate\": \"2023-09-30\"}]} \n", "match": [true, false, false]}
+{"result": "```json\n{\n\"API\": [\n\"depositFunds\"\n],\n\"parameters\": [\n{\n\"accountNumber\": \"32421516\",\n\"recipientAccountNumber\": \"21674312\",\n\"amount\": \"500\"\n}\n]\n}\n```", "match": [false, false, false]}
+{"result": "```json\n{'API': ['makeLoanPayment'], 'parameters': [{\"loanID\": \"LN987654\", \"paymentAmount\": \"1000\", \"paymentMethod\": \"$$$\"} ] }\n```", "match": [false, false, false]}
+{"result": "```json\n{'API': ['getCustomerStatement', 'makeCreditCardPayment'], 'parameters': [{\"cardID\": \"CC123456\", \"month\": \"last\"}, {\"creditCardNumber\": \"$$$\", \"paymentAmount\": \"$$$\", \"paymentMethod\": \"$$$\"} ] }\n```", "match": [false, false, false]}
+{"result": "{'API': ['closeFixedDeposit'], 'parameters': [{\"fixedDepositID\": \"FD654321\"}]} \n", "match": [true, false, false]}
+{"result": "{'API': ['openRecurringDeposit'], 'parameters': [{\"customerID\": \"123456789\", \"monthlyInstallment\": \"500\", \"termLength\": \"12\"}]} \n", "match": [true, false, false]}
+{"result": "{'API': ['buyInvestment'], 'parameters': [{\"customerID\": \"SD32502\", \"investmentID\": \"INV789012\", \"amount\": \"5000\"}]} \n", "match": [true, false, false]}
+{"result": "```json\n{'API': ['fileInsuranceClaim'], 'parameters': [{'policyID': 'IP456789', 'claimDetails': '$$$'}]}\n```", "match": [false, false, false]}
+{"result": "{'API': ['getMortgageRepaymentSchedule'], 'parameters': [{\"mortgageID\": \"MG123789\"}]} \n", "match": [true, false, false]}
+{"result": "{'API': ['increaseOverdraftLimit'], 'parameters': [{\"accountID\": \"987654321\", \"newLimit\": \"$10,000\"}]} \n", "match": [true, false, false]}
+{"result": "```json\n{\n\"API\": [\"getBranchHours\"],\n\"parameters\": [{\"branchID\": \"$$$\"} ]\n}\n```", "match": [false, false, false]}
+{"result": "{'API': ['convertCurrency'], 'parameters': [{\"fromCurrency\": \"GBP\", \"toCurrency\": \"USD\", \"amount\": 1000}]} \n", "match": [true, false, false]}
+{"result": "{'API': ['orderNewATMCard'], 'parameters': [{\"accountID\": \"112233445\"}]} \n", "match": [true, false, false]}
+{"result": "{'API': ['cancelWireTransfer'], 'parameters': [{\"transferID\": \"WT987654\"}]} \n", "match": [true, false, false]}
+{"result": "```json\n{'API': ['cancelRecurringPayment'], 'parameters': [{\"recurringPaymentID\": \"RP654321\"}]}\n```", "match": [false, false, false]}
+{"result": "{'API': ['setAccountAlert'], 'parameters': [{\"accountID\": \"123456789\", \"alertDetails\": \"low balance less than 100\"}]} \n", "match": [true, false, false]}
+{"result": "{'API': ['updateCustomerDetails'], 'parameters': [{\"customerID\": \"VB23141\", \"newDetails\": \"124918110\"}]} \n", "match": [true, false, false]}
+{"result": "```json\n{'API': ['applyForLoan'], 'parameters': [{\"customerID\": \"VB23141\", \"loanAmount\": \"20000\", \"loanType\": \"home\"}]}\n```", "match": [false, false, false]}
+{"result": "{'API': ['increaseCreditLimit'], 'parameters': [{\"creditCardNumber\": \"$$$\", \"newLimit\": \"15000\"}]} \n", "match": [true, false, false]}
+{"result": "```json\n{\n\"API\": [\"applyForInsurance\"],\n\"parameters\": [\n    {\n        \"customerID\": \"VB23141\",\n        \"insuranceType\": \"Life\",\n        \"coverageAmount\": \"500000\"\n    }\n]\n}\n```", "match": [false, false, false]}
+{"result": "{'API': ['closeFixedDeposit'], 'parameters': [{\"fixedDepositID\": \"$$$\"} ] } \n", "match": [true, false, false]}
+{"result": "{'API': ['openFixedDeposit'], 'parameters': [{\"accountID\": \"LB12110\", \"depositAmount\": \"$$$\", \"termLength\": \"6 months\", \"interestRate\": \"$$$\"} ] } \n", "match": [true, false, false]}
+{"result": "```json\n{'API': ['getCustomerDetails', 'initiateWireTransfer'], 'parameters': [{\"accountCurrency\": \"EUR\"}, {\"recipientAccountNumber\": \"GB21000001\", \"amount\": \"900\", \"currency\": \"GBP\", \"senderName\": \"Peter Parker\"}]}\n```", "match": [false, false, false]}
+{"result": "{'API': ['getCustomerDetails'], 'parameters': [{\"accountNumber\": \"4421310012415510\"}]}  \n", "match": [true, false, false]}
+{"result": "{'API': ['getAccountDetails'], 'parameters': [{\"accountID\": \"LB12110\"}]} \n", "match": [true, false, false]}
+{"result": "```json\n{'API': ['getCurrencyExchangeRates'], 'parameters': [{\"currencyPair\": \"USDJPY\"}]}\n```", "match": [false, false, false]}
+{"result": "```json\n{'API': ['applyForLoan'], 'parameters': [{\"customerID\": \"123155\", \"loanAmount\": \"3000\", \"loanType\": \"short term\"}]}\n```", "match": [false, false, false]}
+{"result": "```json\n{\n\"API\": [\"buyInvestment\"],\n\"parameters\": [\n{\"customerID\": \"123155\", \"investmentID\": \"$$$\", \"amount\": \"30000\"}\n]\n}\n```", "match": [false, false, false]}
+{"result": "{'API': ['orderNewATMCard'], 'parameters': [{\"accountID\": \"123155\"}]} \n\n\n", "match": [true, false, false]}
+{"result": "```json\n{'API': ['getAverageSpend'], 'parameters': [\n  {'accountID': '123155', 'startDate': '2024-01-01', 'endDate': '2024-03-31', 'excludeRecurringPayments': True}\n]}\n```", "match": [false, false, false]}
+{"result": "{'API': ['getMortgageRepaymentSchedule'], 'parameters': [{\"mortgageID\": \"M67890\"}]} \n", "match": [true, true, true]}
+{"result": "{'API': ['makeMortgagePayment'],\n 'parameters': [\n {'mortgageID': 'M67890', \n 'paymentAmount': '1500', \n 'paymentMethod': 'checking'}\n ]}", "match": [true, true, false]}
+{"result": "{'API': ['getMortgageBalance'], 'parameters': [{\"mortgageID\": \"M67890\"}]} \n", "match": [true, true, true]}
+{"result": "{'API': ['getOverdraftDetails'], 'parameters': [{\"accountID\": \"123456\"}]} \n", "match": [true, true, true]}
+{"result": "```json\n{\n\"API\": [\"applyForOverdraft\"],\n\"parameters\": [\n{\"accountID\": \"123456\", \"overdraftLimit\": \"5000\"}\n]\n}\n```", "match": [false, false, false]}
+{"result": "```json\n{'API': ['getOverdraftLimit'], 'parameters': [{\"accountID\": \"123456\"}]}\n```", "match": [false, false, false]}
+{"result": "{'API': ['increaseOverdraftLimit'], 'parameters': [{\"accountID\": \"123456\", \"newLimit\": \"7000 USD\"}]} \n", "match": [true, true, false]}
+{"result": "{'API': ['getAccountStatements'], 'parameters': [{'accountID': '123456', 'startDate': '2023-01-01', 'endDate': '2023-12-31'}]} \n", "match": [true, true, true]}
+{"result": "{'API': ['downloadStatement'], 'parameters': [{\"statementID\": \"S7890\", \"format\": \"PDF\"}]} \n", "match": [true, true, true]}
+{"result": "{'API': ['getBranchDetails'], 'parameters': [{\"branchID\": 'B123'}]} \n", "match": [true, true, true]}
+{"result": "{'API': ['getNearestBranch'], 'parameters': [{\"location\": \"New York City\"}]} \n", "match": [true, true, true]}
+{"result": "```json\n{\n\"API\": [\"getBranchHours\"],\n\"parameters\": [{\"branchID\": \"B123\"}]\n}\n```", "match": [false, false, false]}
+{"result": "{'API': ['getATMDetails'], 'parameters': [{\"atmID\": \"ATM456\"}]} \n", "match": [true, true, true]}
+{"result": "{'API': ['getNearestATM'], 'parameters': [{\"location\": \"Los Angeles\"}]} \n", "match": [true, true, true]}
+{"result": "{'API': ['getATMCardList'], 'parameters': [{\"accountID\": \"123456\"}]} \n", "match": [true, true, true]}
+{"result": "{'API': ['reportLostATMCard'], 'parameters': [{\"accountID\": \"C234589\"}, {\"cardID\": \"5514987678765424\"}]} \n", "match": [true, false, false]}
+{"result": "{'API': ['orderNewATMCard'], 'parameters': [{\"accountID\": \"123456\"}]} \n", "match": [true, true, true]}
+{"result": "{'API': ['activateATMCard'], 'parameters': [{\"accountID\": \"123456\", \"cardID\": \"CARD101\"}]} \n", "match": [true, true, true]}
+{"result": "{'API': ['changeATMPIN'], 'parameters': [{\"accountID\": \"$$$\", \"cardID\": \"CARD101\", \"newPIN\": \"$$$\"} ] } \n", "match": [true, true, true]}
+{"result": "{'API': ['getCurrencyRates'], 'parameters': [{\"currencyPair\": \"USD to EUR\"}]} \n", "match": [true, true, false]}
+{"result": "{'API': ['getInterestRates'], 'parameters': [{\"currency\": \"USD\", \"termLength\": \"12 months\"}]} \n", "match": [true, true, false]}
+{"result": "{'API': ['convertCurrency'], 'parameters': [{\"fromCurrency\": \"USD\", \"toCurrency\": \"EUR\", \"amount\": \"1000\"}]} \n", "match": [true, true, false]}
+{"result": "{'API': ['getWireTransferDetails'], 'parameters': [{\"transferID\": \"WT123\"}]} \n", "match": [true, true, true]}
+{"result": "```json\n{\n\"API\": [\"initiateWireTransfer\"],\n\"parameters\": [\n{\"fromAccountID\": \"$$$\"},\n{\"toBankDetails\": \"$$$\"},\n{\"amount\": \"5000\"},\n{\"currency\": \"USD\"}\n]\n}\n```", "match": [false, false, false]}
+{"result": "{'API': ['getWireTransferStatus'], 'parameters': [{\"transferID\": \"WT456\"}]} \n", "match": [true, true, true]}
+{"result": "{'API': ['cancelWireTransfer'], 'parameters': [{\"transferID\": \"WT789\"}]} \n", "match": [true, true, true]}
+{"result": "{'API': ['getRecurringPaymentList'], 'parameters': [{\"accountID\": \"123456\"}]} \n", "match": [true, true, true]}
+{"result": "```json\n{'API': ['getRecurringPaymentDetails'], 'parameters': [{\"recurringPaymentID\": \"RP123\"}]}\n```", "match": [false, false, false]}
+{"result": "{'API': ['createRecurringPayment'], 'parameters': [{\"fromAccountID\": \"$$$\", \"toAccountID\": \"654321\", \"amount\": \"100\", \"frequency\": \"month\"}]} \n", "match": [true, true, false]}
+{"result": "```json\n{'API': ['updateRecurringPayment'], 'parameters': [{\"recurringPaymentID\": \"RP123\", \"newDetails\": \"150 USD\"}]}\n```", "match": [false, false, false]}
+{"result": "{'API': ['getItemPrice'], 'parameters': [{\"itemId\": \"ITEM123\"}]} \n", "match": [true, true, true]}
+{"result": "```json\n{'API': ['payByVISA'], 'parameters': [{\"cardNumber\": \"4111111111111234\", \"expiryDate\": \"12/25\", \"cvv\": \"123\", \"amount\": 50}]}\n```", "match": [false, false, false]}
+{"result": "{'API': ['addItemToCart'], 'parameters': [{\"itemId\": \"ITEM456\", \"quantity\": 2}]} \n", "match": [true, true, true]}
+{"result": "{'API': ['removeItemFromCart'], 'parameters': [{\"itemId\": \"ITEM789\"}]} \n", "match": [true, true, true]}
+{"result": "{'API': ['getCartItems'], 'parameters': []} \n", "match": [true, true, true]}
+{"result": "{'API': ['checkout'], 'parameters': [{\"userId\": \"USER123\"}]} \n", "match": [true, true, true]}
+{"result": "{'API': ['getOrderStatus'], 'parameters': [{\"orderId\": \"ORDER123\"}]} \n", "match": [true, true, true]}
+{"result": "{'API': ['cancelOrder'], 'parameters': [{\"orderId\": \"ORDER789\"}]} \n", "match": [true, true, true]}
+{"result": "{'API': ['applyDiscount'], 'parameters': [{\"orderId\": \"ORDER456\", \"discountCode\": \"SAVE10\"}]} \n", "match": [true, true, false]}
+{"result": "{'API': ['getShippingOptions'], 'parameters': [{\"orderId\": \"ORDER123\"}]}", "match": [true, true, true]}
+{"result": "{'API': ['selectShippingOption'], 'parameters': [{\"orderId\": \"ORDER456\", \"shippingOptionId\": \"Express\"}]} \n", "match": [true, true, true]}
+{"result": "{'API': ['updateUserProfile'], 'parameters': [{\"userId\": \"USER123\", \"profileData\": {\"name\": \"John Doe\", \"email\": \"john.doe@example.com\"}}]} \n", "match": [true, true, true]}
+{"result": "{'API': ['getItemDetails'], 'parameters': [{\"itemId\": \"ITEM987\"}]}\n", "match": [true, true, true]}
+{"result": "```json\n{'API': ['getCustomerDetails'], 'parameters': [{\"customerId\": \"$$$\"} ] }\n```", "match": [false, false, false]}
+{"result": "{'API': ['getRecommendations'], 'parameters': [{\"userId\": \"USER456\"}]} \n", "match": [true, true, true]}
+{"result": "{'API': ['getOrderHistory'], 'parameters': [{\"userId\": \"USER123\"}]} \n", "match": [true, true, true]}
+{"result": "```json\n{'API': ['getUserWishlist'], 'parameters': [{'userId': 'USER123'}]} \n```", "match": [false, false, false]}
+{"result": "{'API': ['addItemToWishlist'], 'parameters': [{\"userId\": \"USER123\", \"itemId\": \"ITEM654\"}]} \n", "match": [true, true, true]}
+{"result": "{'API': ['removeItemFromWishlist'], 'parameters': [{\"userId\": \"USER123\", \"itemId\": \"ITEM123\"}]}  \n", "match": [true, true, true]}
+{"result": "{'API': 'getNotifications', 'parameters': {\"userId\": \"USER456\"}} \n", "match": [true, false, false]}
+{"result": "```json\n{\n\"API\": [\"markNotificationAsRead\"],\n\"parameters\": [{\"userId\": \"USER456\", \"notificationId\": \"NOTIF123\"}]\n}\n```", "match": [false, false, false]}
+{"result": ",'  parameters': ['userId', 'email']}} \n", "match": [false, false, false]}
+{"result": null, "match": [false, false, false]}
+{"result": "{'API': ['trackOrder'], 'parameters': [{\"orderId\": \"ORDER456\"}]} \n\n\n\n\n", "match": [true, true, true]}
+{"result": "```json\n{\n \"API\": [\"requestReturn\"],\n \"parameters\": [{\"orderId\": \"ORDER789\", \"reason\": \"damaged product\"}]\n}\n```", "match": [false, false, false]}
+{"result": "{'API': 'getReturnStatus', 'parameters': [{\"returnRequestId\": \"RETURN12\"}]} \n", "match": [true, false, false]}
+{"result": "```json\n{\n  \"itemId\": \"ITEM123\",\n  \"userId\": \"USER456\",\n  \"rating\": 5\n}\n```", "match": [false, false, false]}
+{"result": "{'API': ['getItemReviews'], 'parameters':  [{'itemId': 'ITEM789'}]} \n", "match": [true, true, true]}
+{"result": "{'API': ['getPopularItems'], 'parameters': {}} \n", "match": [true, false, false]}
+{"result": "```json\n{'API': ['getNewArrivals',], 'parameters': [{'parameter1ForCall1': '$$$'}, {'parameter1ForCall2': '$$$'}]}\n```", "match": [false, false, false]}
+{"result": "```json\n{'API': ['getCategories'], 'parameters': [{\"categoryName\": \"$$$\"}]}\n```", "match": [false, false, false]}
+{"result": "```json\n{'API': ['getCategoryItems'], 'parameters': [{\"categoryId\": \"electronics\"}]}\n```", "match": [false, false, false]}
+{"result": "{'API': ['getUserFavorites'], 'parameters': [{'userId': 'USER123'}]}", "match": [true, true, true]}
+{"result": "'{\"API\": \"addItemToFavorites\", \"parameters\": {\"userId\": \"USER123\", \"itemId\": \"ITEM456\"}}\n", "match": [false, false, false]}
+{"result": "{'name': 'removeItemFromFavorites', 'description': \"Remove an item from the user's favorites.\", 'parameters': {'userId': 'string', 'itemId': 'string'}, 'returnParameter': 'FavoritesStatus'}\n```json\n{\"userId\": \"USER123\", \"itemId\": \"ITEM789\"} \n```\n", "match": [false, false, false]}
+{"result": "```json\n{\n  \"API\": [\"getStoreLocations\"],\n  \"parameters\": [{\"location\": \"$$$\"} ]\n}\n```", "match": [false, false, false]}
+{"result": "```json\n{'API': ['getStoreHours'], 'parameters': {'storeId': 'STORE123'}} \n```", "match": [false, false, false]}
+{"result": "```json\n{'API': ['getReturnPolicy'], 'parameters': {}}\n```", "match": [false, false, false]}
+{"result": "{'API': ['contactSupport'], 'parameters': [{\"userId\": \"USER123\", \"message\": \"I received the wrong item.\"}]} \n", "match": [true, true, true]}
+{"result": "```json\n{\n  \"API\": [\n    {\n      \"name\": \"updatePaymentMethod\",\n      \"parameters\": {\n        \"userId\": \"USER123\",\n        \"paymentMethod\": {\n          \"cardNumber\": \"42131012415\",\n          \"expiryDate\": \"***\",\n          \"cvv\": \"***\"\n        }\n      },\n      \"returnParameter\": \"PaymentMethodStatus\"\n    }\n  ]\n}\n```", "match": [false, false, false]}
+{"result": null, "match": [false, false, false]}
+{"result": "```json\n{\n  \"API\": \"updateShippingAddress\",\n  \"parameters\": {\n    \"address\": \"31 Baker Street, London\",\n    \"userId\": \"cc0019\"\n  }\n},\n{\n  \"API\": \"getShippingOptions\",\n  \"parameters\": {\n    \"orderId\": \"***\" \n  }\n}\n```", "match": [false, false, false]}
+{"result": "```json\n{\"userId\": \"cc001\", \"itemId\": \"item456\"}\n```", "match": [false, false, false]}
+{"result": "```json\n{'API': ['searchItems'], 'parameters': {\"query\": \"wireless headphones\", \"userID\": \"cc0019\"}} \n```", "match": [false, false, false]}
+{"result": "```json\n{\n \"API\": [\"payByVISA\"],\n \"parameters\": {\n  \"cardNumber\": \"****\",\n  \"expiryDate\": \"****\",\n  \"cvv\": \"****\",\n  \"amount\": 10130 \n }\n}\n```", "match": [false, false, false]}
+{"result": "{'API': ['getOrderStatus'], 'parameters': [{\"orderId\": \"order789\"}]} \n", "match": [true, false, false]}
+{"result": "```json\n{\n\"API\": ['getOrderSummary'],\n\"parameters\": [{\"orderId\": \"order123\"}]\n}\n```", "match": [false, false, false]}
+{"result": "{'API': 'redeemGiftCard', 'parameters': {'orderId': '$$$', 'giftCardCode': 'GIFT12021'}} \n", "match": [true, false, false]}
+{"result": "```json\n{\n\"API\": [\"submitReview\"],\n\"parameters\": [{\"itemId\": \"item789\", \"userId\": \"cc0019\", \"rating\": 5, \"review\": \"excellent\"}]\n}\n```", "match": [false, false, false]}
+{"result": "{'API': ['redeemLoyaltyPoints'], 'parameters': [{\"orderId\": \"$$$\"}, {\"points\": 100}]} \n", "match": [true, false, false]}
+{"result": "```json\n{'API': ['deletePaymentMethod'], 'parameters': [{\"userId\": 'cc001', \"paymentMethodId\": '3412'}]}\n```", "match": [false, false, false]}
+{"result": "```json\n{'API': ['requestOrderInvoice'], 'parameters': {\"orderId\": \"order555\"}}\n```", "match": [false, false, false]}
+{"result": "```json\n{'API': ['reserveItem'], 'parameters': [{\"itemId\": \"item888\", \"userId\": \"cc019\"}]}\n```", "match": [false, false, false]}
+{"result": "```json\n{'API': ['markNotificationAsRead'], 'parameters': [{\"userId\": \"cc0019\", \"notificationId\": \"notif123\"}]}\n```", "match": [false, false, false]}
+{"result": "```json\n{'API': ['updateUserCommunicationPreferences'], 'parameters': [{'userId': 'cc00'}, {'preferences': 'opt out of newsletters'}]}\n```", "match": [false, false, false]}
+{"result": "```json\n{\n  \"API\": [\"getGiftWrapOptions\"],\n  \"parameters\": [{\"orderId\": \"076985\", \"wrapOption\": \"premium\"}]\n}\n```", "match": [false, false, false]}
+{"result": "```json\n{'API': ['getSupportTicketStatus'], 'parameters': [{\"ticketId\": \"cc00 19\"}]}\n```", "match": [false, false, false]}
+{"result": "```json\n{\n  \"API\": [\"getCustomerDetails\"],\n  \"parameters\": {\"orderId\": \"order101\"}\n}\n```", "match": [false, false, false]}
+{"result": "```json\n{'API': ['getCustomerDetails', 'addItemToFavorites'], 'parameters': [{'customerId': 'CC00041', 'itemId': 'item555'}, {'userId': '$$$', 'itemId': '$$$'}]}\n```", "match": [false, false, false]}
+{"result": "```json\n{'API': ['getStoreHours'], 'parameters': {\"store\": \"store999\"}}\n```", "match": [false, false, false]}
+{"result": "```json\n{'API': ['checkout'], 'parameters': [{\"userId\": \"CC001451\"}]}\n```", "match": [false, false, false]}
+{"result": "  ```json\n  {\n    \"API Name\": \"requestInvoice\",\n    \"parameters\": {\n      \"orderId\": \"order234\"\n    }\n  }\n  ```", "match": [false, false, false]}
+{"result": "```json\n{\n  \"API\": [\"applyDiscountCode\"],\n  \"parameters\": [\n    {\n      \"orderId\": \"$$$\",\n      \"discountCode\": \"SPRINGSALE\"\n    }\n  ]\n}\n```", "match": [false, false, false]}
+{"result": "```json\n{'API': ['getCustomerDetails', 'addItemsToCart', 'addToFavorites', 'checkout'],\n 'parameters': [\n  {\"customerId\": \"CC000145\",\n  \"parameter1\": \"$$$\"},\n  {\"itemId\": \"$$$\"},\n  {\"itemId\": \"$$$\"},\n  {\"userId\": \"CC000145\"}\n ]\n}\n```", "match": [false, false, false]}
+{"result": "{'API': ['getCustomerDetails'], 'parameters': [{\"userId\": \"CC001451\"}]}\n", "match": [true, false, false]}
+{"result": "```json\n{'API': ['getTrackStatus'], 'parameters': {'trackingNumber': 'TRACK123'}}\n```", "match": [false, false, false]}
+{"result": "```json\n{'API': ['createShipment'], 'parameters': [{'weight': '5', 'length': '10', 'width': '8', 'height': '6'}]}\n``` \n", "match": [false, false, false]}
+{"result": "```json\n[\n  {\n    \"role\": \"user\",\n    \"content\": \"Can you calculate the shipping cost for a package 6kg 12x10x8cm going from Chicago to Miami?\"\n  }\n]\n```", "match": [false, false, false]}
+{"result": "```json\n{'API': ['getDeliveryEstimate'], 'parameters': {'shipmentId': 'SHIP456'}}\n```", "match": [false, false, false]}
+{"result": null, "match": [false, false, false]}
+{"result": "```json\n{\n  'API': ['cancelShipment'],\n  'parameters': [\n    { 'shipmentId': 'SHIP987' }\n  ]\n} \n```", "match": [false, false, false]}
+{"result": "```json\n{\n  \"api\": \"updateShipmentDetails\" ,\n  \"parameters\": {\n    \"shipmentId\": \"SHIP123\",\n    \"weight\": 15,\n    \"dimensions\": {\n      \"length\": 50,\n      \"width\": 50,\n      \"height\": 30\n    }\n  }\n}\n``` \n", "match": [false, false, false]}
+{"result": "```json\n{'API': ['getShipmentDetails'], 'parameters': [{\"shipmentId\": \"SHIP456\"}]}\n```", "match": [false, false, false]}
+{"result": "```json\n{'origin': 'San Francisco', 'destination': 'Seattle'}\n```\n", "match": [false, false, false]}
+{"result": "```json\n{'API': ['getAvailableCarriers'], 'parameters': {\"origin\": \"Dallas\", \"destination\": \"Denver\"}}\n```", "match": [false, false, false]}
+{"result": "{'API': ['trackMultipleShipments'], 'parameters': [{\"trackingNumbers\": \"TRACK001, TRACK002, TRACK003\"}]} \n", "match": [true, false, false]}
+{"result": "```json\n{\n\"API\": [\"validateAddress\"],\n\"parameters\": { \"address\": \"456 Elm St, Los Angeles, CA\" }\n}\n```", "match": [false, false, false]}
+{"result": "```json\n{'API': ['getServiceAvailability'], 'parameters': {\"origin\": \"Boston\", \"destination\": \"London\"}} \n```", "match": [false, false, false]}
+{"result": "```json\n{'API': ['getCustomsInformation'], 'parameters': [{\"origin\": \"New York\", \"destination\": \"Paris\"}]}\n```", "match": [false, false, false]}
+{"result": "{'API': ['generateShippingLabel'], 'parameters': {'shipmentId': 'SHIP789'}} \n", "match": [true, false, false]}
+{"result": "```json\n{'API': ['getPickupLocations'], 'parameters': [{'postalCode': '1001', 'countryCode': 'USA'}]}\n```", "match": [false, false, false]}
+{"result": "```json\n{'API': ['getShippingHistory'], 'parameters': [{\"shipmentId\": \"SHIP123\"}]}\n```", "match": [false, false, false]}
+{"result": "```json\n{'API': ['getDeliveryStatus'], 'parameters': [{'shipmentId': 'SHIP987'}]}\n```", "match": [false, false, false]}
+{"result": "```json\n{'API': ['getShipmentCostBreakdown'], 'parameters': {'shipmentId': 'SHIP654'}}\n```", "match": [false, false, false]}
+{"result": "```json\n{'API': ['getShipmentInsuranceOptions'], 'parameters': {\"shipmentId\": \"SHIP321\"}} \n```", "match": [false, false, false]}
+{"result": "```json\n{'API': ['addShipmentInsurance'], 'parameters': [{\"shipmentId\": \"SHIP123\", \"insuranceOptionId\": \"INS001\"}]}\n```", "match": [false, false, false]}
+{"result": "{'API': ['getShipmentWeight'], 'parameters': [{\"shipmentId\": \"SHIP987\"}]}  \n", "match": [true, true, true]}
+{"result": "```json\n{\n  \"API\": \"estimatePackageWeight\",\n  \"parameters\": {\n    \"length\": 15,\n    \"width\": 10,\n    \"height\": 8\n  }\n}\n``` \n", "match": [false, false, false]}
+{"result": "```json\n{'API': ['getShipmentVolume'], 'parameters': [{\"shipmentId\": \"SHIP456\"}]}\n```", "match": [false, false, false]}
+{"result": "```json\n{\n  \"name\": \"getPackageVolume\",\n  \"description\": \"Calculates the volume of a package given its dimensions.\",\n  \"parameters\": {\n    \"length\": {\n      \"type\": \"number\",\n      \"description\": \"Length of the package in centimeters\"\n    },\n    \"width\": {\n      \"type\": \"number\",\n      \"description\": \"Width of the package in centimeters\"\n    },\n    \"height\": {\n      \"type\": \"number\",\n      \"description\": \"Height of the package in centimeters\"\n    }\n  },\n  \"returns\": {\n    \"volume\": {\n      \"type\": \"number\",\n      \"description\": \"Volume of the package in cubic centimeters\"\n    }\n  }\n}\n```", "match": [false, false, false]}
+{"result": "{'API': ['createBulkShipment'], 'parameters': [{\"shipmentsInfo\": \"***\"}]} \n", "match": [true, true, true]}
+{"result": "{'API': ['getBulkShipmentStatus'], 'parameters': [{\"bulkShipmentId\": \"BULK123\"}]} \n", "match": [true, true, true]}
+{"result": "```json\n{'API': ['generateBulkShippingLabels'], 'parameters': [{\"bulkShipmentId\": \"BULK456\"}]}\n```", "match": [false, false, false]}
+{"result": "```json\n{'API': ['getCarrierServiceDetails'], 'parameters': {'carrierId': 'CARRIER001'}} \n```", "match": [false, false, false]}
+{"result": "```json\n{'API': ['getTransitTimes'], 'parameters': [{'origin': 'Houston', 'destination': 'London'}]} \n```", "match": [false, false, false]}
+{"result": "```json\n{'API': ['getDeliveryProof'], 'parameters': {'shipmentId': 'SHIP123'}} \n```", "match": [false, false, false]}
+{"result": "```json\n{'API': ['requestSignatureOnDelivery'], 'parameters': [{\"shipmentId\": \"SHIP456\"}]}\n```", "match": [false, false, false]}
+{"result": "```json\n{'API': ['getAvailableServices'], 'parameters': {'origin': 'San Diego', 'destination': 'Tokyo'}} \n```", "match": [false, false, false]}
+{"result": "```json\n{'API': ['getShipmentValue'], 'parameters': [{\"shipmentId\": \"SHIP789\"}]}\n```", "match": [false, false, false]}
+{"result": "```json\n{\n  \"name\": \"updateShipmentValue\",\n  \"parameters\": {\n    \"shipmentId\": \"SHIP32\",\n    \"value\": \"***\" \n  }\n}\n```", "match": [false, false, false]}
+{"result": "```json\n{\n  'API': [ 'getExportDocumentation' ],\n  'parameters': { 'shipmentId': 'SHIP654' }\n}\n```", "match": [false, false, false]}
+{"result": "{'API': ['getCustomerDetails'], 'parameters': [{\"parameter1ForCall1\": \"$$$\"} ]} \n", "match": [true, false, false]}
+{"result": "{'API': ['getImportDocumentation'], 'parameters': [{\"shipmentId\": \"SHIP123\"}]} \n", "match": [true, true, true]}
+{"result": "```json\n{\"API\": \"submitImportDeclaration\", \"shipmentId\": \"SHIP456\", \"quantity\": 20, \"value\": 150}\n```", "match": [false, false, false]}
+{"result": "```json\n{'API': ['getShipmentTaxes'], 'parameters': [{\"shipmentId\": \"SHIP789\"}]}\n```", "match": [false, false, false]}
+{"result": "```json\n{'API': ['createShipment'], 'parameters': [{\"senderAddress\": \"133 5th Ave, New York\", \"recipientAddress\": \"19 Windsor Blvd, Los Angeles\", \"weight\": 2, \"dimensions\": {\"length\": 40, \"width\": 20, \"height\": 10}}]}\n```", "match": [false, false, false]}
+{"result": "['getDeliveryEstimate', 'getCustomerDetails'] \n    'parameters': {'shipmentId': 'TRK123456'},\n'returnParameter': 'DeliveryEstimate']\n\n", "match": [false, false, false]}
+{"result": "```json\n{'API': ['generateShippingLabel'], 'parameters': [{\"shipmentId\": \"SHP78910\"}]}\n```", "match": [false, false, false]}
+{"result": "```json\n{\n  \"API\": [\"getShippingOptions\"],\n  \"parameters\": {\n    \"origin\": \"Chicago\",\n    \"destination\": \"Houston\"\n  }\n}\n```", "match": [false, false, false]}
+{"result": "```json\n{'API': 'getCustomsInformation', 'parameters': [{\"origin\": \"San Francisco\"}, {\"destination\": \"Tokyo\"}]}\n```", "match": [false, false, false]}
+{"result": "```json\n{}\n```", "match": [false, false, false]}
+{"result": null, "match": [false, false, false]}
+{"result": "{'API': ['updateShipmentDetails'], 'parameters': [{\"shipmentId\": \"SHP67890\", \"weight\": \"1kg\", \"dimensions\": \"10x10x10cm\" }]} \n", "match": [true, false, false]}
+{"result": "```json\n{\n  \"shipmentId\": \"SHP1123\" \n}\n```", "match": [false, false, false]}
+{"result": "{'API': ['getDeliveryProof'], 'parameters': [{\"shipmentId\": \"SHP33445\"}]} \n", "match": [true, false, false]}
+{"result": "```json\n{'API': ['getCustomerDetails'], 'parameters': [{\"name\": 'customerName', \"type\": 'string'}]}\n```", "match": [false, false, false]}
+{"result": null, "match": [false, false, false]}
+{"result": "```json\n{\n  \"API\": [\"convertShipmentCost\"],\n  \"parameters\": [\n    {\n      \"shipmentId\": \"SHP5667\",\n      \"currencyTo\": \"EUR\"\n    }\n  ]\n}\n```", "match": [false, false, false]}
+{"result": "```json\n{'API': ['getWarehouseInventory'], 'parameters': [{\"warehouseId\": \"WH123\"}]} \n```", "match": [false, false, false]}
+{"result": "```json\n{\n \"API\": [ \"transferInventory\", \"getTransferStatus\" ],\n \"parameters\": [\n  {\"warehouseFrom\": \"WH123\", \"warehouseTo\": \"WH456\"},\n  {\"transferId\": \"$$$\"} \n ]\n}\n```", "match": [false, false, false]}
+{"result": "```json\n{'API': ['getDeliveryProof'], 'parameters': [{\"shipmentId\": \"SHP77889\"}]}\n```", "match": [false, false, false]}
+{"result": "```json\n{\n \"API\": \"addShipmentInsurance\",\n \"parameters\": {\n  \"shipmentId\": \"SHP9901\",\n  \"insuranceOptionId\": \"$$$\"\n }\n}\n```", "match": [false, false, false]}
+{"result": "```json\n{\n  \"API\": [\"getShipmentDetails\"],\n  \"parameters\": {\n    \"shipmentId\": \"SH325\"\n  }\n}\n```", "match": [false, false, false]}
+{"result": "```json\n{'API': ['getShipmentCostBreakdown'], 'parameters': [\n    {'shipmentId': 'SHP22334'}\n]}\n```", "match": [false, false, false]}
+{"result": "```json\n{\n \"API\": \"schedulePickup\",\n \"parameters\": {\n  \"shipmentId\": \"LU5289622\", \n  \"pickupLocation\": \"10010\"\n }\n}\n```", "match": [false, false, false]}
+{"result": "```json\n{'API': ['generateShippingLabel'], 'parameters': {'senderAddress': '15 Sudbury St, Boston', 'recipientAddress': '10th Ave, Seattle', 'weight': '1kg', 'insurance': 'STANDARD'}}\n```", "match": [false, false, false]}
+{"result": ": \n```json\n{'API': ['getShipmentDetails'], 'parameters': [{\"shipmentId\": \"105 18th Ave, Seattle\"}]} \n```\n", "match": [false, false, false]}
+{"result": "```json\n{\n  \"API\": [\n    \"transferInventory\",\n    \"getInventory\",\n    \"createShipments\"\n  ],\n  \"parameters\": [\n    {\n      \"sourceWarehouse\": \"WH001\",\n      \"destinationWarehouse\": \"WH002\"\n    },\n    {\n      \"warehouse\": \"WH002\"\n    },\n    {\n      \"warehouse\": \"WH002\"  \n    }\n  ]\n}\n```", "match": [false, false, false]}
+{"result": "```json\n{\n  \"api_name\": \"getExportDocumentation\",\n  \"parameters\": {\n    \"shipmentId\": \"shipmentId\" \n  }\n}\n```", "match": [false, false, false]}
+{"result": "```json\n{\n  \"role\": \"user\",\n  \"content\": \"I have a package but I'm not sure about its weight. Can you estimate the package weight based on dimensions? Provide me with shipping options from Dallas to Seattle, and then calculate the shipping cost. My address is 22 Lauder Ln, Dallas, and the destination is 18th Ave, Seattle.\"\n}\n``` \n\n\n\n\n", "match": [false, false, false]}
+{"result": null, "match": [false, false, false]}
+{"result": "```json\n{'API': ['getFlightStatus'],\n 'parameters': [{\"flightNumber\": \"AA100\", \"date\": \"2024-03-21\"}]}\n```", "match": [false, false, false]}
+{"result": "```json\n{\n  \"API\": \"bookFlight\",\n  \"parameters\": {\n    \"flightNumber\": \"JL13\",\n    \"passengerName\": \"John Doe\",\n    \"paymentInfo\": \"VISA\"\n  }\n}\n```", "match": [false, false, false]}
+{"result": "['API']\n ['API']\n ['API']\n ['API']\n  ['API']\n  ['API']\n  ['API']\n  ['API']\n  ['API']\n  ['API']\n  ['API']\n  ['API']\n  ['API']\n  ['API']\n  ['API']\n  ['API']\n  ['API']\n  ['API']\n  ['API']\n  ['API']\n  ['API']\n  ['API']\n  ['API']\n  ['API']\n  ['API']\n  ['API']\n  ['API']\n  ['API']\n  ['API']\n  ['API']\n  ['API']\n  ['API']\n  ['API']\n  ['API']\n  ['API']\n  ['API']\n  ['API']\n  ['API']\n  ['API']\n  ['API']\n  ['API']\n  ['API']\n  ['API']\n  ['API']\n  ['API']\n  ['API']\n  ['API']\n  ['API']\n  ['API']\n  ['API']\n  ['API']\n  ['API']\n  ['API']\n  ['API']\n  ['API']\n  ['API']\n  ['API']\n  ['API']\n  ['API']\n  ['API']\n  ['API']\n  ['API']\n  ['API']\n  ['API']\n  ['API']\n  ['API']\n  ['API']\n  ['API']\n  ['API']\n  ['API']\n  ['API']\n  ['API']\n  ['API']\n  ['API']\n  ['API']\n  ['API']\n  ['API']\n  ['API']\n  ['API']\n  ['API']\n  ['API']\n  ['API']\n  ['API']\n  ['API']\n  ['API']\n  ['API']\n  ['API']\n  ['API']\n  ['API']\n  ['API']\n  ['API']\n  ['API']\n  ['API']\n  ['API']\n  ['API']\n  ['API']\n  ['API']\n  ['API']\n  ['API']\n  ['API']\n  ['API']\n  ['API']\n  ['API']\n  ['API']\n  ['API']\n  ['API']\n  ['API']\n  ['API']\n  ['API']\n  ['API']\n  ['API']\n  ['API']\n  ['API']\n  ['API']\n  ['API']\n  ['API']\n  ['API']\n  ['API']\n  ['API']\n  ['API']\n  ['API']\n  ['API']\n  ['API']\n  ['API']\n  ['API']\n  ['API']\n  ['API']\n  ['API']\n  ['API']\n  ['API']\n  ['API']\n  ['API']\n  ['API']\n  ['API']\n  ['API']\n  ['API']\n  ['API']\n  ['API']\n  ['API']\n  ['API']\n  ['API']\n  ['API']\n  ['API']\n  ['API']\n  ['API']\n  ['API']\n  ['API']\n  ['API']\n  ['API']\n  ['API']\n  ['API']\n  ['API']\n  ['API']\n  ['API']\n  ['API']\n  ['API']\n  ['API']\n  ['API']\n  ['API']\n  ['API']\n  ['API']\n  ['API']\n  ['API']\n  ['API']\n  ['API']\n  ['API']\n  ['API']\n  ['API']\n  ['API']\n  ['API']\n  ['API']\n  ['API']\n  ['API']\n  ['API']\n  ['API']\n  ['API']\n  ['API']\n  ['API']\n  ['API']\n  ['API']\n  ['API']\n  ['API']\n  ['API']\n  ['API']\n  ['API']\n  ['API']\n  ['API']\n  ['API']\n  ['API']\n  ['API']\n  ['API']\n  ['API']\n  ['API']\n  ['API']\n  ['API']\n  ['API']\n  ['API']\n  ['API']\n  ['API']\n  ['API']\n  ['API']\n  ['API']\n  ['API']\n  ['API']\n  ['API']\n  ['API']\n  ['API']\n  ['API']\n  ['API']\n  ['API']\n  ['API']\n  ['API']\n  ['API']\n  ['API']\n  ['API']\n  ['API']\n  ['API']\n  ['API']\n  ['API']\n  ['API']\n  ['API']\n  ['API']\n  ['API']\n  ['API']\n  ['API']\n  ['API']\n  ['API']\n  ['API']\n  ['API']\n  ['API']\n  ['API']\n  ['API']\n  ['API']\n  ['API']\n  ['API']\n  ['API']\n  ['API']\n  ['API']\n  ['API']\n  ['API']\n  ['API']\n  ['API']\n  ['API']\n  ['API']\n  ['API']\n  ['API']\n  ['API']\n  ['API']\n  ['API']\n  ['API']\n  ['API']\n  ['API']\n  ['API']\n  ['API']\n  ['API']\n  ['API']\n  ['API']\n  ['API']\n  ['API']\n  ['API']\n  ['API']\n  ['API']\n  ['API']\n  ['API']\n  ['API']\n  ['API']\n  ['API']\n  ['API']\n  ['API']\n  ['API']\n  ['API']\n  ['API']\n  ['API']\n  ['API']\n  ['API']\n  ['API']\n  ['API']\n  ['API']\n  ['API']\n  ['API']\n  ['API']\n  ['API']\n  ['API']\n  ['API']\n  ['API']\n  ['API']\n  ['API']\n  ['API']\n  ['API']\n  ['API']\n  ['API']\n  ['API']\n  ['API']\n  ['API']\n  ['API']\n  ['API']\n  ['API']\n  ['API']\n  ['API']\n  ['API']\n  ['API']\n  ['API']\n  ['API']\n  ['API']\n  ['API']\n  ['API']\n  ['API']\n  ['API']\n  ['API']\n  ['API']\n  ['API']\n  ['API']\n  ['API']\n  ['API']\n\n\n\n", "match": [false, false, false]}
+{"result": "```json\n{\"API\": \"getAvailableSeats\", \"parameters\": {\"flightNumber\": \"LH21\"}}\n```", "match": [false, false, false]}
+{"result": "```json\n{'API': ['selectSeat'], 'parameters':  {\"bookingId\": \"BNR32\", \"seatNumber\": \"12A\"}}\n```", "match": [false, false, false]}
+{"result": "```json\n{'API': ['getCustomerDetails'], 'parameters': [{\"bookingId\": \"BNR321\"}]} \n```", "match": [false, false, false]}
+{"result": "```json\n{\"API\": \"getCustomerDetails\", \"parameters\": {\"CustomerID\": \"ITEM\"}} \n```", "match": [false, false, false]}
+{"result": "```json\n{\n  \"api\": \"getBaggageAllowance\",\n  \"flightNumber\": \"SG890\",\n  \"ticketClass\": \"economy\"\n}\n```", "match": [false, false, false]}
+{"result": "```json\n{\n  \"intent\": \"get_baggage_status\",\n  \"baggage_id\": \"BAG123\"\n} \n```", "match": [false, false, false]}
+{"result": "```json\n{\n  \"name\": \"checkIn\",\n  \"description\": \"Check in a passenger for a flight.\",\n  \"parameters\": {\n    \"bookingId\": \"BNR321\",\n    \"passengerId\": \"$$$\",\n  \n    \"\n  }\n} \n```", "match": [false, false, false]}
+{"result": "{'name': 'getBoardingPass', 'description': 'Retrieve the boarding pass for a passenger.', 'parameters': {'passengerId': 'The ID of the passenger.'}, 'return': 'BoardingPass'}\n", "match": [true, false, false]}
+{"result": "```json\n{\n\"API\": [\"getFlightDetails\"],\n\"parameters\": [{\"flightNumber\": \"AF321\"}]\n}\n```", "match": [false, false, false]}
+{"result": "```json\n{\n \"origin\": \"LAX\",\n \"destination\": \"JFK\",\n \"date\": \"2024-10-01\",\n \"class\": \"business\"\n}\n```", "match": [false, false, false]}
+{"result": "```json\n{\n\"API\": [\"getAirlineInfo\"],\n\"parameters\": [{\"airlineId\": \"AL001\"}]\n}\n```", "match": [false, false, false]}
+{"result": "```json\n{'API': ['getAirportInfo'], 'parameters': [{\"airportCode\": \"JFK\"}]}\n```", "match": [false, false, false]}
+{"result": "```json\n{\n  \"bookingId\": \"Y43F10\"\n}\n```", "match": [false, false, false]}
+{"result": "```json\n{'API': ['getFrequentFlyerMiles'], 'parameters': [{\"frequentFlyerId\": \"FF123\"}]}\n```", "match": [false, false, false]}
+{"result": "```json\n{\n\"api\": \"redeemFrequentFlyerMiles\",\n\"parameters\": {\n\"rewardId\": \"RW5678\",\n\"frequentFlyerId\": \"$$$\",\n\"miles\": \"$$$\"}\n}\n```", "match": [false, false, false]}
+{"result": "```json\n{\n'API': ['getAvailableRewards'],\n'parameters': [\n{\n'frequentFlyerId': 'FF123'\n}\n]\n}\n```\n\n\n\n\n", "match": [false, false, false]}
+{"result": "```json\n{\n  \"API\": [\"updateFlightPreferences\"],\n  \"parameters\": {\n    \"bookingId\": \"RE456\",\n    \"preferences\": \"***\" \n  }\n}\n``` \n\n\n", "match": [false, false, false]}
+{"result": "```json\n{'API': ['getFlightPrice'], 'parameters': [{\"flightNumber\": \"BR34\", \"ticketClass\": \"economy\"}]}\n```", "match": [false, false, false]}
+{"result": "```json\n{\n  \"name\": \"getFlightOffers\",\n  \"parameters\": {\n    \"origin\": \"JFK\",\n    \"destination\": \"LAX\"\n  }\n}\n```", "match": [false, false, false]}
+{"result": "```json\n{\n  \"API\": \"getFlightRoutes\",\n  \"parameters\": {\n    \"airlineId\": \"AL002\"\n  }\n}\n```", "match": [false, false, false]}
+{"result": "```json\n{'API': ['getAircraftDetails'], 'parameters': [{\"flightNumber\": \"LX45\"}]}\n```", "match": [false, false, false]}
+{"result": "{'API': ['requestSpecialMeal'], 'parameters': [{\"bookingId\": \"54T321\", \"mealType\": \"vegan\"}]} \n", "match": [true, true, true]}
+{"result": "```json\n{\n  \"API\": \"requestWheelchairAssistance\",\n  \"parameters\": {\n    \"bookingId\": \"76R5U3\"\n  }\n}\n```", "match": [false, false, false]}
+{"result": "{\n  \"API\": [\"getVisaRequirements\"],\n  \"parameters\": [\n    {\n      \"origin\": \"JFK\",\n      \"destination\": \"LAX\",\n      \"nationality\": \"US\"\n    }\n  ]\n} \n", "match": [true, true, true]}
+{"result": "```json\n[\n  {\n    \"api\": \"getTravelAdvisories\",\n    \"parameters\": {\n      \"destination\": \"London\"\n    }\n  }\n]\n```", "match": [false, false, false]}
+{"result": "```json\n{\n  \"API\": [\"getWeatherInfo\"],\n  \"parameters\": { \"airportCode\": \"JFK\" }\n}\n```", "match": [false, false, false]}
+{"result": "```json\n{'API': ['getFlightDelayInfo'], 'parameters': {'flightNumber': 'AA123', 'date': '2024-10-05'}}\n```", "match": [false, false, false]}
+{"result": "```json\n{'API': ['getFlightCancellationPolicy'], 'parameters': [{\"flightNumber\": \"AF6\"}]}\n```", "match": [false, false, false]}
+{"result": "```json\n{'API': ['getFlightRefundStatus'], 'parameters': [{\"bookingId\": \"Y12345\"}]}\n```", "match": [false, false, false]}
+{"result": "```json\n{'API': 'getTravelInsuranceOptions', 'parameters': [{\"bookingId\": \"JERF21\"}]}\n```", "match": [false, false, false]}
+{"result": "```json\n{'API': ['purchaseTravelInsurance'], 'parameters': [{\"bookingId\": \"JERF21\", \"insuranceOption\": \"IN123\"}]}\n```", "match": [false, false, false]}
+{"result": "```json\n{\n  'API': ['getAirportTransferOptions'],\n  'parameters': [\n    {'bookingId': 'JERF21'}\n  ]\n}\n```", "match": [false, false, false]}
+{"result": "{'API': ['bookAirportTransfer'], 'parameters': [{'bookingId': 'JERF21', 'transferOptionId': 'TR456'}]} \n", "match": [true, true, true]}
+{"result": "```json\n{'API': 'getInFlightEntertainment', 'parameters': {'flightNumber': 'EY586'}} \n```", "match": [false, false, false]}
+{"result": "```json\n{'API': ['getInFlightMealOptions'], 'parameters': [{\"flightNumber\": \"EY586\"}]}\n```", "match": [false, false, false]}
+{"result": "{'API': ['getCustomerDetails'], 'parameters': [{\"parameter1ForCall1\": \"LAX\"}, {\"parameter2ForCall1\": \"JFK\"}, {\"parameter3ForCall1\": \"2024-09-20\"}]} \n", "match": [true, false, false]}
+{"result": "```json\n{\n  'API': ['getAvailableSeats', 'getCustomerDetails'],\n  'parameters': [\n    {\n      'flightNumber': '$$$',\n      'departureAirport': 'JFK',\n      'arrivalAirport': 'LAX'\n    },\n    {\n      'customerId': '$$$',\n      'flightNumber': '$$$',\n      'date': '2024-10-05'\n    }\n  ]\n}\n```", "match": [false, false, false]}
+{"result": "```json\n{\n  \"flightNumber\": \"5678\",\n  \"ticketClass\": \"business\"\n}\n``` \n", "match": [false, false, false]}
+{"result": "```json\n{\n  \"API\": [\n    \"getBookingDetails\",\n    \"getAvailableUpgrades\"\n  ],\n  \"parameters\": [\n    {\"bookingId\": \"U54321\"},\n    {\"bookingId\": \"U54321\"}\n  ]\n}\n```", "match": [false, false, false]}
+{"result": "```json\n{'API': ['redeemFrequentFlyerMiles'], 'parameters': [{\"frequentFlyerId\": \"FF123\", \"rewardId\": \"$$$\"} ] }\n```", "match": [false, false, false]}
+{"result": "```json\n{\n  \"flightNumber\": \"***\",\n  \"ticketClass\": \"firstClass\"\n}\n```", "match": [false, false, false]}
+{"result": "```json\n[{'API': ['getFlightCancellationPolicy'], 'parameters': [{\"flightNumber\": \"AA200\"}]}]\n```", "match": [false, false, false]}
+{"result": "```json\n{\n  \"API\": [\"getVisaRequirements\"],\n  \"parameters\": [\n    {\n      \"nationality\": \"US\",\n      \"origin\": \"LAX\",\n      \"destination\": \"CDG\"\n    }\n  ]\n}\n```", "match": [false, false, false]}
+{"result": "```json\n{'API': ['getAirportParkingOptions'], 'parameters': [{\"airportCode\": \"JFK\"}]}\n```", "match": [false, false, false]}
+{"result": "```json\n{\n  \"API\": [\n    \"requestSpecialMeal\"\n  ],\n  \"parameters\": [\n    {\n      \"bookingId\": \"5A4321\",\n      \"mealType\": \"vegetarian\"\n    }\n  ]\n}\n```", "match": [false, false, false]}
+{"result": "```json\n{\n  \"API\": \"getFlights\",\n  \"parameters\": {\n    \"origin\": \"LAX\",\n    \"destination\": \"SFO\",\n    \"date\": \"2024-01-01\",\n    \"bookingId\": \"2024-09-20\"\n  }\n}\n```", "match": [false, false, false]}
+{"result": "```json\n{'API': ['getInFlightEntertainment'], 'parameters': [{'flightNumber': '$$$'}]}\n```", "match": [false, false, false]}
+{"result": "```json\n{\n  \"APIname\": \"getAirportTransferOptions\",\n  \"parameters\": {\n    \"bookingId\": \"54Y321\"\n  }\n}\n```", "match": [false, false, false]}
+{"result": "```json\n{\n  \"getCustomerDetails\": [\n    {\n      \"customerId\": \"$$$\",\n      \"frequentFlyerId\": \"FF123\"\n    }\n  ],\n  \"redeemMiles\": [\n    {\n      \"frequentFlyerId\": \"FF123\",\n      \"rewardId\": \"RW5678\"\n    }\n  ]\n}\n```", "match": [false, false, false]}
+{"result": "```json\n{\n \"API\": [\"getCustomerDetails\"],\n \"parameters\": [\n  {\n   \"bookingId\": \"98H765\"\n  }\n ]\n}\n```\n", "match": [false, false, false]}
+{"result": "```json\n{\n  \"API\": \"getAirlineInfo\",\n  \"parameters\": {\n    \"airlineId\": \"$$$\" \n  }\n}\n```", "match": [false, false, false]}
+{"result": "```json\n{\n  \"flights\": {\n    \"origin\": \"JFK\",\n    \"destination\": \"LAX\",\n    \"date\": \"December 15th\"\n  },\n  \"booking\": {\n    \"name\": \"Sam Jackson\",\n    \"cardType\": \"American Express\"\n  }\n}\n```", "match": [false, false, false]}
+{"result": "        ```json\n        {\n          \"API\": [\"getFlightDelayInfo\"],\n          \"parameters\": [\n            { \"flightNumber\": \"AA123\" },\n            { \"date\": \"November 20th\" }\n          ]\n        }\n        ```", "match": [false, false, false]}
+{"result": null, "match": [false, false, false]}
+{"result": "```json\n[\n  {\n    \"role\": \"assistant\",\n    \"content\": \"```json\\n{\\n\\\"API\\\": [\\n\\\"getCustomerDetails\\\",\\n\\\"depositFunds\\\"\\n],\\n\\\"parameters\\\": [\\n{\\n\\\"parameter1ForCall1\\\": \\\"$$$\\\"\\n},\\n{\\n\\\"parameter1ForCall2\\\": \\\"$$$\\\",\\n\\\"parameter2ForCall2\\\": \\\"$$$\\\"\\n}\\n]\\n}\\n```\"\n  }\n]\n```", "match": [false, false, false]}
+{"result": "```json\n{'API': ['getBaggageAllowance'], 'parameters': [{\"flightNumber\": \"FL123\", \"ticketClass\": \"economy\"}]}\n```", "match": [false, false, false]}
+{"result": "```json\n{\n  \"API\": \"getBoardingPass\",\n  \"parameters\": {\n    \"bookingCode\": \"BK456\",\n    \"passportNumber\": \"B594672\"\n  }\n}\n```", "match": [false, false, false]}
+{"result": null, "match": [false, false, false]}
+{"result": "```json\n{'API': ['getAircraftDetails'], 'parameters': [{\"flightNumber\": \"FL789\"}]}\n```", "match": [false, false, false]}
+{"result": "```json\n{\n   \"API\": [\"getVisaRequirements\"],\n   \"parameters\": [{\"destination\": \"Japan\", \"nationality\": \"US\"}] \n}\n```", "match": [false, false, false]}
+{"result": "```json\n{\n  \"api1\": \"getWeatherInfo\",\n  \"api1_params\": {\n    \"airportCode\": \"CDG\"\n  }\n}\n```", "match": [false, false, false]}
+{"result": "```json\n{\n \"API\": [\"bookMeal\"],\n \"parameters\": {\n \"bookingId\": \"BK321\",\n \"mealType\": \"Halal\"\n }\n}\n``` \n", "match": [false, false, false]}
+{"result": "```json\n{'API': ['getCustomerDetails', 'bookFlight'], 'parameters': [{\"parameter1ForCall1\": \"Wilson Smith\"}, {\"parameter1ForCall2\": \"FL654\", \"parameter2ForCall2\": \"first class\", \"paymentInfo\": \"JCB\"}]}\n```", "match": [false, false, false]}
+{"result": "```json\n{ \n\"API\": [\"getCustomerDetails\"], \n\"parameters\": [{\"frequentFlyerId\": \"***\"}] \n}\n\n```", "match": [false, false, false]}
+{"result": "```json\n{\n \"API\": [\"getConnectingFlights\"],\n \"parameters\": {\n  \"origin\": \"LAX\",\n  \"destination\": \"SYD\",\n  \"date\": \"January 10th\"\n }\n}\n```", "match": [false, false, false]}
+{"result": "'  '\n", "match": [true, false, false]}
+{"result": "```json\n{\n  \"airportCode\": \"JFK\",\n  \"bookingId\": \"BK987\"\n}\n``` \n\n\n", "match": [false, false, false]}
+{"result": "```json\n{\n  \"API\": [\"getInFlightEntertainment\"],\n  \"parameters\": [{\"flightNumber\": \"FL321\", \"EntertainmentOptions\": \"$$$\"} ]\n}\n``` \n", "match": [false, false, false]}
+{"result": "```json\n{'API': ['getFlightDetails'], 'parameters': {'checkInId': 'CI34627123'}} \n```", "match": [false, false, false]}
+{"result": "```json\n{\n  \"name\": \"getFlightCancellationPolicy\",\n  \"parameters\": {\n    \"flightNumber\": \"FL987\"\n  }\n}\n```\n", "match": [false, false, false]}
+{"result": "```json\n{\n\"API\": [\"getAirportParkingOptions\"],\n\"parameters\": {\n\"airportCode\": \"LHR\"\n}\n}\n```", "match": [false, false, false]}
+{"result": "```json\n{'API': ['getCustomerDetails'], 'parameters': [{\"name\": \"Sam Brown\"}]} \n```", "match": [false, false, false]}
+{"result": "```json\n{\n  \"API\": [\"getFlightCancellationPolicy\"],\n  \"parameters\": {\n    \"flightNumber\": \"DL789\"\n  }\n}\n```", "match": [false, false, false]}
+{"result": "```json\n{'API': ['getBoardingPass'], 'parameters': [{\"bookingId\": \"BK889\", \"passportId\": \"H971\"}]}\n```", "match": [false, false, false]}
+{"result": null, "match": [false, false, false]}
+{"result": "```json\n{\"customerName\": \"Daniel Wellington\", \"origin\": \"NYC\", \"destination\": \"LHR\", \"paymentType\": \"American Express\", \"insuranceDesired\": true}\n```", "match": [false, false, false]}
+{"result": "```json\n{\n  \"patientId\": \"12345\"\n}\n```", "match": [false, false, false]}
+{"result": "```json\n{'API': ['getPatientInfo', 'parameters':[{\"patientId\": \"ABCD1234\"}]}\n```", "match": [false, false, false]}
+{"result": null, "match": [false, false, false]}
+{"result": "```json\n{\n  \"api\": \"getAppointmentDetails\",\n  \"parameters\": {\n    \"appointmentId\": \"APPT123\"\n  }\n}\n```", "match": [false, false, false]}
+{"result": "```json\n{'API': ['getAppointmentDetails'], 'parameters': [{\"appointmentId\": \"APPT456\"}]}\n```", "match": [false, false, false]}
+{"result": "```json\n{\n  \"appointmentId\": \"APPT789\"\n}\n``` \n", "match": [false, false, false]}
+{"result": "```json\n{  \"API\": [\"bookAppointment\"],\n  \"parameters\": [{\"patientId\": \"PATIENT001\", \"doctorId\": \"DOC123\", \"department\": \"Cardiology\", \"appointmentDate\": \"2023-10-15\" }]\n}\n```", "match": [false, false, false]}
+{"result": "{\n  \"name\": \"bookAppointment\",\n  \"parameters\": {\n    \"patientId\": \"PATIENT002\",\n    \"doctorId\": \"DOC711\",\n    \"department\": \"neurology\",\n    \"appointmentDate\": \"2024-09-25\"\n  }\n} \n", "match": [true, false, false]}
+{"result": "```json\n{\n  \"API\": [\"bookAppointment\"],\n  \"parameters\": [\n    {\"patientId\": \"PATIENT003\", \"doctorId\": \"DOC456\", \"department\": \"pediatrics\", \"appointmentDate\": \"2023-11-01\"}\n  ]\n}\n```", "match": [false, false, false]}
+{"result": "```json\n{\n\"API\": [\"cancelAppointment\"],\n\"parameters\": [{\"appointmentId\": \"APPT999\"}]\n}\n```", "match": [false, false, false]}
+{"result": "```json\n{\n  \"apiName\": \"cancelAppointment\",\n  \"parameters\": {\n    \"appointmentId\": \"APPT888\" \n  }\n}\n```", "match": [false, false, false]}
+{"result": "```json\n{'API': ['cancelAppointment'], 'parameters': {\"appointmentId\": \"APPT777\"}}\n```", "match": [false, false, false]}
+{"result": "```json\n[\n  {\n    \"name\": \"getDoctorInfo\",\n    \"description\": \"Retrieve information about a specific doctor.\",\n    \"parameters\": {\n      \"doctorId\": \"string\"\n    },\n    \"returnParameter\": {\n      \"DoctorName\": \"string\",\n      \"DoctorID\": \"string\",\n      \"Specialization\": \"string\",\n      \"Experience\": \"number\",\n      \"ContactDetails\": \"string\"\n    }\n  }\n]\n\n\n``` \n\n\n```json\n{\n  \"role\": \"user\",\n  \"content\": \"Can you provide information about doctor ID DOC999?\"\n}\n```", "match": [false, false, false]}
+{"result": "  ```json\n  {\n    \"role\": \"user\",\n    \"content\": \"Give me the details about Dr. Johnson, doctor ID DOC888.\"\n  }\n```\n", "match": [false, false, false]}
+{"result": "```json\n{\n\"API\": \"getDoctorInfo\",\n\"parameters\": {\n\"doctorId\": \"DOC777\" \n}\n}\n```\n", "match": [false, false, false]}
+{"result": "```json\n{\n  \"API\": \"getPatientMedicalHistory\",\n  \"parameters\": {\n    \"patientId\": \"54321\"\n  }\n}\n``` \n\n\nLet me know if you have any other questions. \n", "match": [false, false, false]}
+{"result": "{'API': ['getPatientMedicalHistory'], 'parameters': [{\"patientId\": \"EFGH5678\"}]} \n", "match": [true, true, true]}
+{"result": "```json\n{'API': ['getPatientMedicalHistory'], 'parameters': [{\"patientId\": \"67890\"}]}\n```", "match": [false, false, false]}
+{"result": "```json\n{\n  \"patientId\": \"24680\",\n  \"phone\": \"555-1234\",\n  \"address\": \"123 Main Street\"\n}\n``` \n\n\n", "match": [false, false, false]}
+{"result": "```json\n{\n  \"API\": [\"updatePatientInfo\"],\n  \"parameters\": [\n    {\"patientId\": \"13579\"}\n  ]\n}\n```", "match": [false, false, false]}
+{"result": "```json\n{\n  \"patientId\": \"123\",\n  \"insuranceNumber\": \"INS1232267\"\n}\n```", "match": [false, false, false]}
+{"result": " 'parameters': {'billId': '$$$'} \n        \n'}]\n", "match": [false, false, false]}
+{"result": "```json\n{\n  \"api\": \"getBillingInfo\",\n  \"parameters\": {\n    \"billId\": \"BILL002\"\n  }\n}\n```", "match": [false, false, false]}
+{"result": "```json\n{\n  \"API\": [\"getCustomerDetails\"],\n  \"parameters\": [{\"billId\": \"BILL003\"}]\n}\n``` \n\n\nLet me know if you have any other questions or need me to analyze more examples!\n", "match": [false, false, false]}
+{"result": "```json\n{\n  \"API\": \"payBill\",\n  \"parameters\": {\n    \"billId\": \"BILL004\",\n    \"paymentAmount\": \"500.00\"\n  }\n}\n```", "match": [false, false, false]}
+{"result": "```json\n{'API': ['payBill'], 'parameters': [{\"billId\": \"$$$\", \"paymentAmount\": \"$$$\"} ] }\n```", "match": [false, false, false]}
+{"result": "```json\n{\n  \"API\": [\"payBill\"],\n  \"parameters\": {\n    \"billId\": \"BILL006\",\n    \"paymentAmount\": \"20\"\n  }\n}\n```", "match": [false, false, false]}
+{"result": "[\n  {\n    \"name\": \"getPatientInsurance\",\n    \"description\": \"Retrieve insurance details for a patient\",\n    \"parameters\": {\n      \"patientId\": \"string\"\n    },\n    \"return\": {\n      \"InsuranceProvider\": \"string\",\n      \"InsuranceNumber\": \"string\",\n      \"CoverageDetails\": \"string\"\n    }\n  }\n] \n", "match": [true, false, false]}
+{"result": "```json\n{\n  \"api\": \"getCoverageDetails\",\n  \"parameters\": {\n    \"patientId\": \"54321\"\n  }\n}\n```", "match": [false, false, false]}
+{"result": "```json\n{'API': 'getInsuranceDetails', 'parameters': {'patientId': '67890'}} \n```", "match": [false, false, false]}
+{"result": "```json\n{\n  \"appointment\": {\n    \"patientId\": \"P123\",\n    \"doctorId\": \"D678\",\n    \"insuranceNumber\": \"INS1065\",\n    \"department\": \"Cardiology\",\n    \"notes\": \"update my insurance number\"\n  }\n}\n```", "match": [false, false, false]}
+{"result": "```json\n[\n  {\n    \"name\": \"getLabResults\",\n    \"description\": \"Retrieves lab test results for a given test ID\",\n    \"parameters\": {\n      \"testId\": \"string\"\n    }\n  },\n  {\n    \"name\": \"scheduleAppointment\",\n    \"description\": \"Schedules a follow-up appointment with a doctor\",\n    \"parameters\": {\n      \"patientId\": \"string\",\n      \"doctorId\": \"string\" \n    }\n  }\n]\n```", "match": [false, false, false]}
+{"result": "```json\n{'API': ['payBill'], 'parameters': [{\"billId\": \"B1234\", \"paymentAmount\": \"***\"}]}\n```", "match": [false, false, false]}
+{"result": "```json\n{\n  \"API\": [\"bookAppointment\"],\n  \"parameters\": {\n    \"patientId\": \"123\",\n    \"doctorId\": \"DM401\",\n    \"department\": \"Dermatology\",\n    \"date\": \"2024-11-23\"\n  }\n}\n```", "match": [false, false, false]}
+{"result": "```json\n{\n  \"API\": [\n    \"getPatientVaccinationRecords\",\n    \"scheduleAppointment\"\n  ],\n  \"parameters\": [\n    {\n      \"patientId\": \"P567\",\n      \"immunization\": \"flu\",\n      \"doctorId\": \"IM512024\"\n    }\n  ]\n}\n```", "match": [false, false, false]}
+{"result": "```json\n{'API': 'updatePatientInfo', 'parameters': {'patientId': 'P67890', 'insuranceNumber': 'INS973902'}}\n```", "match": [false, false, false]}
+{"result": "```json\n{\n\"api\": \"bookAppointment\",\n\"patientId\": \"$$$\",\n\"doctorId\": \"Adams\",\n\"date\": \"2024-12-15\"\n}\n```", "match": [false, false, false]}
+{"result": "```json\n{\n  \"API\": \"getPatientInfo\",\n  \"parameters\": {\n    \"patientID\": \"P89012\" \n  }\n}\n``` \n", "match": [false, false, false]}
+{"result": "```json\n{\n  \"patientId\": \"user-11\",\n  \"doctorId\": \"surgery-S5678\",\n  \"appointmentDate\": \"2024-12-12\"\n}\n``` \n", "match": [false, false, false]}
+{"result": "```json\n{'API': 'getCustomerDetails', 'parameters': {'prescriptionId': 'PR1234'}}\n```", "match": [false, false, false]}
+{"result": "```json\n{\n  \"name\": \"getAppointmentDetails\",\n  \"parameters\": {\n    \"appointmentId\": \"A5678\"\n  }\n}\n```", "match": [false, false, false]}
+{"result": "```json\n{'API': ['getCustomerDetails'], 'parameters': [{\"patientId\": \"P23456\"}]}\n```", "match": [false, false, false]}
+{"result": "```json\n{'API': ['bookAppointment'], 'parameters': [{\"patientId\": \"P34567\", \"doctorId\": \"Dr. Lee\", \"appointmentDate\": \"2025-01-05\"}]}\n```", "match": [false, false, false]}
+{"result": "```json\n[\n  {\n    \"API\": \"dischargePatient\",\n    \"parameters\": {\n      \"patientId\": \"P56789\"\n    }\n  }\n]\n``` \n", "match": [false, false, false]}
+{"result": "```json\n{\n  \"API\": \"getBillingInfo\",\n  \"parameters\": {\n    \"billId\": \"B6789\",\n    \"patientId\": \"P99986\"\n  }\n}\n```", "match": [false, false, false]}
+{"result": "```json\n[\n  {'name': 'getPrescriptionDetails', 'description': 'Retrieve prescription details for a given patient ID'}\n]\n```\n\n\n", "match": [false, false, false]}
+{"result": "```json\n{\n  \"API\": [\n    {\"getCustomerDetails\": [\"doctorId\": \"TD121451\"]},\n    {\"orderLabTest\": [\"patientId\": \"$$$\", \"labTestType\": \"blood\", \"doctorId\": \"TD121451\"]}\n  ]\n}\n``` \n\n\n", "match": [false, false, false]}
+{"result": "```json\n[\n  {\"name\": \"getCustomerDetails\", \"parameters\": {\"IDNumber\": \"123456789\"}}\n] \n\n\n```", "match": [false, false, false]}
+{"result": "```json\n{'API': ['getPersonalIDInfo'], 'parameters': [{\"personalID\": \"ABCD1234\"}]}\n```", "match": [false, false, false]}
+{"result": "```json\n{\"API\": [\"getPersonalIDInfo\"], \"parameters\": [{\"personalID\": \"987654321\"}]}\n```", "match": [false, false, false]}
+{"result": "{'API': ['updatePersonalIDInfo'], 'parameters': [{\"personalID\": \"567890123\", \"updateData\": \"***\"}]} \n", "match": [true, true, true]}
+{"result": "```json\n{'API': ['updatePersonalIDInfo'], 'parameters': [{\"personalID\": \"LMN456789\"}]}\n```", "match": [false, false, false]}
+{"result": "```json\n{\n\"API\": [\"updatePersonalIDInfo\"],\n\"parameters\": [{\"personalID\": \"ZXCV0987\", \"email\": \"asd@abc.com\"}]\n}\n```", "match": [false, false, false]}
+{"result": "```json\n{\n  \"API\": \"getCustomerPassportDetails\",\n  \"parameters\": {\n    \"PassportNumber\": \"12345678\",\n    \"Nationality\": \"\"\n  }\n}\n```", "match": [false, false, false]}
+{"result": "```json\n{\n  \"passportNumber\": \"87654321\",\n  \"fullName\": \"John Doe\",\n  \"dateOfIssue\": \"2023-01-01\",\n  \"nationality\": \"USA\" \n}\n```\n", "match": [false, false, false]}
+{"result": "{\"PassportNumber\": \"\",\"PassportIssueDate\": \"\",\"PassportExpiryDate\": \"\",\"Nationality\": \"\"}\n\n\n\n\n", "match": [true, false, false]}
+{"result": "\n\n\n\n\nI want to get the API key to use with this API\n\n\n\nwhich API should I call to get an API key?\n\n\n\n```json\n{\n  \"status\": \"success\",\n  \"message\": \"API key generated successfully.\",\n  \"api_key\": \"YOUR_API_KEY_HERE\"\n}\n```\n\n\n```\ncurl -X POST \\\n  https://api.example.com/v1/api_keys \\\n  -H \"Content-Type: application/json\" \\\n  -d '{ \"api_name\": \"my_api\" }'\n```\n\n\n", "match": [false, false, false]}
+{"result": "  \t\n ]\n\n```json\n[\n  {\n    \"name\": \"paginate\",\n    \"description\": \"Returns a paginated list of items\"\n  },\n  {\n    \"name\": \"get\",\n    \"description\": \"Returns a single item by ID\"\n  },\n  {\n    \"name\": \"create\",\n    \"description\": \"Creates a new item\"\n  },\n  {\n    \"name\": \"update\",\n    \"description\": \"Updates an existing item\"\n  },\n  {\n    \"name\": \"delete\",\n    \"description\": \"Deletes an item by ID\"\n  }\n]\n```\n\n\nYou need to ask me which APIs you want the descriptions for.\n\n```json\n[\n  {\n    \"name\": \"paginate\",\n    \"description\": \"Returns a paginated list of items\"\n  },\n  {\n    \"name\": \"get\",\n    \"description\": \"Returns a single item by ID\"\n  },\n  {\n    \"name\": \"create\",\n    \"description\": \"Creates a new item\"\n  },\n  {\n    \"name\": \"update\",\n    \"description\": \"Updates an existing item\"\n  },\n  {\n    \"name\": \"delete\",\n    \"description\": \"Deletes an item by ID\"\n  }\n]\n```\n\nWhich API descriptions would you like?\n\n\n", "match": [false, false, false]}
+{"result": "```json\n[{'API': 'getPassport', 'parameters': {'passportId': '***'}}] \n```", "match": [false, false, false]}
+{"result": "", "match": [false, false, false]}
+{"result": "```json\n{\n  \"name\": \"renewPassport\",\n  \"description\": \"Renew an existing passport.\",\n  \"parameters\": {\n    \"passportNumber\": {\n      \"type\": \"string\"\n    },\n    \"expiryDate\": {\n      \"type\": \"string\"\n    }\n  },\n  \"returnParameter\": {\n    \"RenewalStatus\": {\n      \"type\": \"string\"\n    }\n  }\n}\n```", "match": [false, false, false]}
+{"result": "{\n  \"name\": \"renewPassport\",\n  \"description\": \"Renew an existing passport\",\n  \"parameters\": {\n    \"passportNumber\": {\n      \"type\": \"string\"\n    },\n    \"expiryDate\": {\n      \"type\": \"date\"\n    }\n  }\n}", "match": [true, false, false]}
+{"result": "```json\n{\n  \"API\": \"getAddressRegister\",\n  \"parameters\": {\n    \"personalID\": \"1122334455\"\n  }\n}\n```", "match": [false, false, false]}
+{"result": "```json\n{'API': ['getAddressRegister'], 'parameters': [{\"personalID\": \"$$$\"} ] }\n```", "match": [false, false, false]}
+{"result": "        ```json\n        {\"API\": \"getAddressRegister\", \"parameters\": {\"personalID\": \"A1B2C3D4\"}}\n        ```\n", "match": [false, false, false]}
+{"result": "```json\n{\n  \"personalID\": \"667899\",\n  \"newAddress\": \"Old Road\" \n}\n``` \n\n\n", "match": [false, false, false]}
+{"result": "```json\n{\n \"API\": [\"updateAddressRegister\"],\n \"parameters\": {\n  \"personalID\": \"544332\",\n  \"newAddress\": \"789 Maple Street\" \n }\n}\n```", "match": [false, false, false]}
+{"result": "```json\n{'API': ['updateAddressRegister'], 'parameters': [{\"personalID\": \"QWERTY123\", \"newAddress\": \"1010 Binary Blvd, New York\"}]}\n```", "match": [false, false, false]}
+{"result": "```json\n{\"parameter1ForCall1\": \"***\" , \"parameter1ForCall2\": \"***\", \"parameter2ForCall2\": \"***\"} \n```", "match": [false, false, false]}
+{"result": "```json\n{\n  \"API\": [\"getCarRegistrationInfo\"],\n  \"parameters\": { \"registrationNumber\": \"XYZ7890\" }\n}\n```", "match": [false, false, false]}
+{"result": "        'parameters': {'customerName': 'string'}}\n\n```json\n{\n\"API\": \"getCarRegistrationInfo\",\n\"parameters\": {\n\"registrationNumber\": \"LMN4567\"\n}\n}\n\n```\n", "match": [false, false, false]}
+{"result": "```json\n{\n  \"ownerID\": \"123321\",\n  \"carDetails\": {\n    \"make\": \"Toyota\",\n    \"model\": \"Corolla\",\n    \"year\": 2021\n  }\n}\n```", "match": [false, false, false]}
+{"result": "```json\n[{'name': 'registerNewCar', 'description': 'Register a new car for a citizen.', 'parameters': {'ownerID': 'string', 'carDetails': {'make': 'string', 'model': 'string', 'year': 'number'}}, 'returnParameter': 'RegistrationStatus'}] \n```", "match": [false, false, false]}
+{"result": "```json\n[\n  {\n    \"role\": \"assistant\",\n    \"content\": \"Okay, I can help with that.  Could you please tell me the owner ID?\"\n  }\n]\n```", "match": [false, false, false]}
+{"result": "{\n  \"api\": \"renewCarRegistration\",\n  \"parameters\": {\n    \"registrationNumber\": \"ABCD1234\",\n    \"renewalDate\": \"2026\"\n  }\n} \n", "match": [true, false, false]}
+{"result": "```json\n{\"API\": [\"renewCarRegistration\"], \"parameters\": [{\"registrationNumber\": \"WXYZ5678\"}]}\n``` \n", "match": [false, false, false]}
+{"result": null, "match": [false, false, false]}
+{"result": "```json\n{\n  \"apiName\": \"getVoterRegistrationStatus\",\n  \"parameters\": {\n    \"personalID\": \"123456789\" \n  }\n}\n```", "match": [false, false, false]}
+{"result": "```json\n{\"personalID\": \"ABC123\"}\n``` \n\ngetVoterRegistrationStatus \n", "match": [false, false, false]}
+{"result": "```json\n{\"API\": \"getCustomerDetails\"}\n```", "match": [false, false, false]}
+{"result": "```json\n{'API': ['registerToVote'], 'parameters': [{\"personalID\": \"456789123\", \"registrationData\": \"CA 5\"}]}\n```", "match": [false, false, false]}
+{"result": "```json\n{\"API\": [\"getMarriageCertificate\"]}\n```", "match": [false, false, false]}
+{"result": "```json\n{\n  \"name\": \"getMarriageCertificate\",\n  \"parameters\": {\n    \"personalID\": \"22334455\"\n  }\n}\n```", "match": [false, false, false]}
+{"result": "```json\n{\n  \"personalID\": \"33445566\",\n  \"spouseID\": \"spouse_ID_here\"\n}\n``` \n", "match": [false, false, false]}
+{"result": "```json\n{\n \"API\": [\"applyForMarriageCertificate\"],\n \"parameters\": {\n  \"personalID\": \"ID778899\",\n  \"spouseID\": \"ID009900\",\n  \"certificateType\": \"Marriage\"\n }\n}\n```", "match": [false, false, false]}
+{"result": "```json\n{\n  \"API\": [\"getCustomerDetails\"],\n  \"parameters\": [{\"parameter1ForCall1\": \"99887766\"}]\n}\n```", "match": [false, false, false]}
+{"result": "```json\n{\n  \"getBirthCertificate\": {\n    \"personalID\": \"887766\"\n  }\n}\n```", "match": [false, false, false]}
+{"result": "```json\n{\n  \"name\": \"applyForBirthCertificate\",\n  \"parameters\": {\n    \"childID\": \"32076655\",\n    \"parentID\": \"YOUR_PARENT_ID\" \n  }\n}\n```", "match": [false, false, false]}
+{"result": null, "match": [false, false, false]}
+{"result": "```json\n{'API': ['applyForDeathCertificate'], 'parameters': {'deceasedID': '321'}}\n``` \n", "match": [false, false, false]}
+{"result": null, "match": [false, false, false]}
+{"result": "```json\n{\n  \"name\": \"applyForCitizenship\",\n  \"parameters\": {\n    \"personalID\": \"888999\"\n  }\n}\n```", "match": [false, false, false]}
+{"result": "Let's break down how to approach this.  You're asking to create an API system, and you've given me some examples to illustrate what you'd like it to do.  \n\n**Here's a summary of what you're aiming for:**\n\n1. **API Description:** You want JSON formatted strings that describe APIs. Each description should include:\n   - `name`: The name of the API.\n   - `description`: A brief explanation of what the API does.\n   - `parameters`:  A list of input values the API expects. Each parameter should have a name (e.g., 'licenseNumber') and a data type (e.g., 'string').\n   - `return`: The data type of the value the API returns.\n\n2. **Example Usage:** You've provided examples of user questions and the corresponding API calls you want to generate based on those questions.\n\n**The Challenge:** Building a system that accurately maps natural language questions to the correct API calls is a complex task called Natural Language Understanding (NLU). It typically involves:\n\n- **Tokenization:** Breaking down the user's question into individual words or phrases.\n- **Part-of-Speech Tagging:** Identifying the grammatical role of each word (noun, verb, adjective, etc.).\n- **Named Entity Recognition:**  Finding key entities in the question (e.g., names, dates, locations).\n- **Intent Recognition:** Determining the user's overall goal or intention behind the question.\n- **Slot Filling:** Identifying specific pieces of information the user is requesting (e.g., the license number).\n- **API Mapping:** Matching the recognized intent and slots to the appropriate API call.\n\n**How to Proceed:**\n\n1. **Start Small:** Begin by focusing on a very specific domain (e.g., retrieving driving license information).\n2. **Rule-Based Approach:** For a smaller domain, you could use a rule-based system. Define specific patterns in the user's questions that map to particular API calls.\n\n3. **Machine Learning:** For more complex scenarios, consider using machine learning techniques. You'll need a labeled dataset of user questions and their corresponding API calls to train a model.\n\n4. **Existing NLU Tools:** Leverage existing NLU libraries and frameworks like:\n   - **spaCy:**  A popular Python library for NLP.\n   - **Rasa:** An open-source framework for building conversational AI.\n   - **Dialogflow:** A Google Cloud platform for building conversational interfaces.\n\n\n\nLet me know if you'd like to explore any of these approaches in more detail!\n", "match": [false, false, false]}
+{"result": "```json\n{'API': ['getCustomerDetails'], 'parameters': [{\"LicenseNumber\": \"DL7654321\"}]}\n```", "match": [false, false, false]}
+{"result": "```json\n{'API': 'applyForDrivingLicense', 'parameters': {'personalID': '111223', 'licenseClass': 'B'}}\n```", "match": [false, false, false]}
+{"result": "```json\n{'API': ['renewDrivingLicense'], 'parameters': [{\"licenseNumber\": \"DL9976\"}]}\n```", "match": [false, false, false]}
+{"result": "```json\n{\n  \"getCriminalRecord\": {\n    \"personalID\": \"14445\"\n  }\n}\n``` \n", "match": [false, false, false]}
+{"result": "```json\n{'API': ['getCustomerDetails', 'updateAddressRegister'], 'parameters': [{\"personalID\": \"12345678\", \"newAddress\": \"123 New Street\"}, {\"personalID\": \"12345678\"} ] }\n```", "match": [false, false, false]}
+{"result": "```json\n{\n  \"API\": \"getCustomerDetails\",\n  \"parameters\": {\n    \"personalID\": \"123456789\"\n  }\n}\n```", "match": [false, false, false]}
+{"result": "```json\n{\n \"name\": \"getDrivingLicenseInfo\",\n \"parameters\": {\n  \"licenseNumber\": \"1234567890\"\n }\n}\n```", "match": [false, false, false]}
+{"result": "```json\n{'API': 'registerToVote', 'parameters': {'personalID': '444555666', 'registrationData': '$$$'}}\n```", "match": [false, false, false]}
+{"result": "```json\n{'API': ['getCriminalRecord'], 'parameters': [{\"personalID\": \"333444555\"}]}\n```", "match": [false, false, false]}
+{"result": "{\"API\": [\"getSocialSecurityInfo\"], \"parameters\": [{\"personalID\": \"2233444\"}]}", "match": [true, false, false]}
+{"result": "```json\n{'API': ['applyForDeathCertificate'], 'parameters': [{\"deceasedID\": \"111222333\"}]} \n```", "match": [false, false, false]}
+{"result": "```json\n{\n  \"parameters\": {\n    \"ownerID\": \"user\",\n    \"animalDetails\": {\n      \"type\": \"cat\",\n      \"name\": \"catname\"\n    }\n  }\n}\n```", "match": [false, false, false]}
+{"result": "```json\n{\n  \"name\": \"getCustomerDetails\",\n  \"parameters\": {},\n  \"returnParameter\": \"customerDetails\"\n}\n```", "match": [false, false, false]}
+{"result": "```json\n{\n  \"apiName\": \"getCustomerDetails\",\n  \"parameters\": {\n    \"personalID\": \"777666555\"\n  }\n}\n```", "match": [false, false, false]}
+{"result": "    {\"name\": \"getCustomerDetails\", \"parameters\": {\"personalID\": \"string\"}, \"returnParameter\": {\"FullName\": \"string\", \"PensionNumber\": \"string\"}} \n  }", "match": [false, false, false]}
+{"result": "```json\n{\n \"API\": [\"getPersonalDetails\"],\n \"parameters\": [{\"personalID\": \"555444333\"}]\n}\n```", "match": [false, false, false]}
+{"result": "```json\n{'API': ['getTaxInfo'], 'parameters': [{\"personalID\": \"$$$\"} ] }\n```", "match": [false, false, false]}
+{"result": "```json\n{\n  \"personalID\": \"333221\",\n  \"StartDate\": \"string\" \n}\n``` \n\nLet me know if you'd like me to try filling in the `StartDate` with a date! \n", "match": [false, false, false]}
+{"result": "```json\n{\n  \"API\": \"getPublicUtilityAccountInfo\",\n  \"parameters\": {\n    \"personalID\": \"22211000\"\n  }\n}\n```", "match": [false, false, false]}
+{"result": "```json\n{\n  \"API\": \"updatePersonalInfo\",\n  \"parameters\": {\n    \"personalID\": \"12345\",\n    \"address\": \"123 Old Street\" \n  }\n}\n```", "match": [false, false, false]}
+{"result": "```json\n{\n  \"name\": \"updateCustomerDetails\",\n  \"parameters\": {\n    \"customerId\": \"987654321\",\n    \"fullName\": \"Jane Smith\"\n  }\n}\n``` \n```json\n{\n  \"name\": \"applyForPassport\",\n  \"parameters\": {}\n}\n```", "match": [false, false, false]}
+{"result": "```json\n{\n  \"personalID\": \"55666777\",\n  \"Nationality\": \"Canadian\" \n}\n```", "match": [false, false, false]}
+{"result": "  ```json\n{\n  \"API\": [\"getBirthCertificate\"],\n  \"parameters\": {\"personalID\": \"445566\"} \n}\n```", "match": [false, false, false]}
+{"result": "      ```json\n      {\n        \"API\": \"updatePersonalDetails\",\n        \"parameters\": [\n          {\n            \"parameter\": \"personalID\",\n            \"value\": \"333444555\"\n          },\n          {\n            \"parameter\": \"gender\",\n            \"value\": \"Female\"\n          }\n        ]\n      }\n      ``` \n\n\n", "match": [false, false, false]}
+{"result": "```json\n{\n  \"parameters\": {\n    \"licenseNumber\": \"123456789\",\n    \"address\": \"2789 New Avenue\"\n  }\n}\n```\n", "match": [false, false, false]}
+{"result": "```json\n{\n  \"API\": [\"getCustomerDetails\"],\n  \"parameters\": [{\"customerID\": \"***\"}]\n}\n```", "match": [false, false, false]}
+{"result": "  ```json\n  {\n    \"api_name\": \"renewDrivingLicense\",\n    \"parameters\": {\n      \"licenseNumber\": \"555666777\",\n      \"renewalData\": {\n        \"fullName\": \" \" \n      }\n    }\n  }\n  ```\n\n\n", "match": [false, false, false]}
+{"result": "```json\n{\"parameter\": \"$$$\"} \n```", "match": [false, false, false]}
+{"result": "```json\n{\n  'API': ['getPropertyOwnershipInfo'],\n  'parameters': [\n    {\n      'personalID': '3334455' \n    }\n  ]\n}\n``` \n", "match": [false, false, false]}
+{"result": "```json\n{'API': 'applyForSocialSecurityBenefits', 'parameters': {'personalID': '444555666', 'startDate': '2023-03-01'}} \n```", "match": [false, false, false]}
+{"result": "```json\n{\n  \"API\": \"getCustomerDetails\",\n  \"parameters\": {\n    \"personalID\": \"555666777\"\n  }\n}\n```", "match": [false, false, false]}
+{"result": "```json\n{\n\"API\": \"getDrivingLicenseInfo\",\n\"parameters\": {\n\"licenseNumber\": \"66677788\"\n}\n}\n``` \n", "match": [false, false, false]}
+{"result": "```json\n{\n \"API\": \"getPassportDetails\",\n \"parameters\": {\n  \"personalID\": \"777888999\"\n }\n}\n```", "match": [false, false, false]}
+{"result": "    ```json\n    {'API': ['getCarRegistrationInfo'], 'parameters': [{\"registrationNumber\": \"Tesla Model 3\"}]}\n    ``` \n", "match": [false, false, false]}
+{"result": "```json\n{'API': ['renewDrivingLicense'], 'parameters': [{\"licenseNumber\": \"DL123456\", \"renewalData\": \"$$$\"} ] }\n```", "match": [false, false, false]}
+{"result": "```json\n{'API': ['getMarriageCertificate'], 'parameters': [{\"personalID\": \"888000222\", \"SpouseName\": \"$$$\", \"MarriageDate\": \"$$$\"} ] }\n```", "match": [false, false, false]}
+{"result": "```json\n{\n\"API\": ['applyForSocialSecurityBenefits'],\n\"parameters\": [\n  {\"personalID\": \"111222333\", \"StartDate\": \"2025-01-01\"}\n]\n}\n```", "match": [false, false, false]}
+{"result": "```json\n{\"personalID\": \"222333444\"}\n```", "match": [false, false, false]}
+{"result": "```json\n[\n  {\n    \"name\": \"scheduleVehicleInspection\",\n    \"parameters\": {\n      \"registrationNumber\": \"ABC123\",\n      \"inspectionDate\": \"2025-02-21\"\n    }\n  }\n]\n```", "match": [false, false, false]}
+{"result": "```json\n{'API': ['getEmployeeInfo'], 'parameters': {'employeeID': 'EMP-101'}} \n```", "match": [false, false, false]}
+{"result": "```json\n{'API': ['getEmployeeInfo'], 'parameters': [{\"employeeID\": \"EMP02\"}]}\n```", "match": [false, false, false]}
+{"result": "```json\n{\n  \"employeeID\": \"EMP003\",\n  \"contractDetails\": {\n    \"startDate\": \"2024-01-01\",\n    \"endDate\": \"2026-12-31\",\n    \"salary\": 60000,\n    \"jobTitle\": \"Software Engineer\" \n  }\n}\n```", "match": [false, false, false]}
+{"result": "```json\n{\n  \"contractID\": \"CONTRACT00\"\n}\n``` \n", "match": [false, false, false]}
+{"result": "```json\n{\n  \"API\": [\n    \"updateEmploymentContract\"\n  ],\n  \"parameters\": [\n    {\"contractID\": \"CONTRACT002\", \"newSalary\": 65000}\n  ]\n}\n```", "match": [false, false, false]}
+{"result": "```json\n{\n  \"contractID\": \"CONTRACT003\",\n  \"terminationDate\": \"2024-10-24\",\n  \"terminationReason\": \"downsizing\"\n}\n``` \n", "match": [false, false, false]}
+{"result": "```json\n{'API': 'getEmployeeSalaryDetails', 'parameters': {'employeeID': 'EMP040'}}\n```", "match": [false, false, false]}
+{"result": "```json\n{'API': ['getLabData'], 'parameters': [{\"patientID\": \"$$$\", \"month\": \"September\"}]}\n```", "match": [false, false, false]}
+{"result": "```json\n{'API': 'getCustomerDetails', 'parameters': {\"employeeID\": \"EMP006\"}} \n```", "match": [false, false, false]}
+{"result": "```json\n{\n  \"API\": [\"updateEmployeeSalary\"],\n  \"parameters\": {\n    \"employeeID\": \"EMP007\",\n    \"Salary\": 5000\n  }\n}\n``` \n\n\n", "match": [false, false, false]}
+{"result": "```json\n{\n\"API\": [\n\"getEmployeeLeaveBalance\"\n],\n\"parameters\": [\n{\"employeeID\": \"EMP008\"}\n]\n}\n```", "match": [false, false, false]}
+{"result": "```json\n{\n  \"name\": \"ForLeave\",\n  \"parameters\": {\n    \"employeeID\": \"EMP009\",\n    \"leaveType\": \"Maternity\",\n    \"startDate\": \"2024-01-01\",\n    \"endDate\": \"2024-01-31\"\n  }\n}\n```", "match": [false, false, false]}
+{"result": "```json\n{\n  \"parameters\": {\n    \"applicationID\": \"LEAVE001\" \n  }\n}\n```", "match": [false, false, false]}
+{"result": "```json\n{\"applicationID\": \"LeaveApplicationID\"}\n```", "match": [false, false, false]}
+{"result": "```json\n{\n  \"API\": \"getEmployeeBenefits\",\n  \"parameters\": {\n    \"employeeID\": \"EMP010\"\n  }\n}\n```", "match": [false, false, false]}
+{"result": "```json\n{'API': ['enrollEmployeeInBenefit'], 'parameters': {\"employeeID\": \"EMP011\", 'benefitType': \"Health Insurance\"}}\n```", "match": [false, false, false]}
+{"result": "```json\n{\n  \"API\": \"getCustomerDetails\",\n  \"parameters\": {\n    \"employeeID\": \"EMP012\",\n    \"reviewPeriod\": \"Q3-2024\"\n  }\n}\n```", "match": [false, false, false]}
+{"result": "```json\n{\"parameter1\": \"E67890\", \"parameter2\": \"A+\", \"reviewData\": {}} \n``` \n", "match": [false, false, false]}
+{"result": "```json\n{'API': ['getTrainingRecords'], 'parameters':  [{'employeeID': 'EMP014'}]}\n```", "match": [false, false, false]}
+{"result": "```json\n[{\"API\": \"assignTrainingProgram\", \"parameters\": {\"employeeID\": \"EMP015\", \"trainingProgramID\": \"LEADERSHIP001\"}}]\n```", "match": [false, false, false]}
+{"result": "```json\n{'API': ['updateSalary'], 'parameters': [{'salary': 80000}]}\n```", "match": [false, false, false]}
+{"result": "```json\n{'API': ['processPayroll'], 'parameters': [{\"employeeID\": \"1231\", \"payPeriod\": \"2023-10\"}]}\n```", "match": [false, false, false]}
+{"result": "```json\n{'apiName': 'getCustomerDetails', 'parameters': []}\n```", "match": [false, false, false]}
+{"result": "        {\n            \"employeeID\": \"12345\",\n            \"trainingProgramID\": \"ABC123\"\n        }\n\n        =======\n\n\n", "match": [false, false, false]}
+{"result": "        ```json\n        {\n          \"parameters\": {\n            \"employeeID\": \"string\",\n            \"benefitType\": \"string\"\n          },\n          \"returnParameter\": \"EnrollmentStatus\"\n        }\n        ```\n", "match": [false, false, false]}
+{"result": "          'name': 'getPayrollByEmployeeID', 'parameters': { 'employeeID': 'string' } }\n  ]}\n\n\n\n```json\n{\n  \"name\": \"processPayroll\",\n  \"description\": \"Process payroll for an employee for a specific period.\",\n  \"parameters\": {\n    \"employeeID\": \"string\",\n    \"payPeriod\": \"string\"\n  }\n}\n```\n\n```json\n{\n  \"name\": \"getPayrollByEmployeeID\",\n  \"description\": \"Get payroll for an employee by ID.\",\n  \"parameters\": {\n    \"employeeID\": \"string\"\n  }\n}\n```\n\n```json\n{\n  \"name\": \"getPayrollByPeriod\",\n  \"description\": \"Get payroll for a specific period.\",\n  \"parameters\": {\n    \"payPeriod\": \"string\"\n  }\n}\n```\n", "match": [false, false, false]}
+{"result": null, "match": [false, false, false]}
+{"result": null, "match": [false, false, false]}
+{"result": "\n\n```json\n[\n  {\n    \"method\": \"POST\",\n    \"path\": \"/updateLeaveApplication\",\n    \"parameters\": {\n      \"applicationID\": {\n        \"type\": \"string\"\n      },\n      \"updateData\": {\n        \"type\": \"object\",\n        \"properties\": {\n          \"startDate\": {\n            \"type\": \"string\"\n          },\n          \"endDate\": {\n            \"type\": \"string\"\n          }\n        }\n      }\n    },\n    \"returnParameter\": \"UpdateStatus\"\n  }\n]\n```\n", "match": [false, false, false]}
+{"result": "\t\n", "match": [false, false, false]}
+{"result": null, "match": [false, false, false]}
+{"result": null, "match": [false, false, false]}
+{"result": "    '\n\n\n", "match": [false, false, false]}
+{"result": "```json\n{\n  \"enrollEmployeeInBenefit\": {\n    \"parameters\": {\n      \"employeeID\": \"string\",\n      \"benefitType\": \"string\"\n    },\n    \"returnParameter\": \"EnrollmentStatus\"\n  }\n} \n```\n", "match": [false, false, false]}
+{"result": null, "match": [false, false, false]}
+{"result": "     ", "match": [false, false, false]}
+{"result": "\"\n", "match": [false, false, false]}
+{"result": "    \n    ```json\n    {\n      \"name\": \"get_api\"\n    }\n    ``` \n", "match": [false, false, false]}
+{"result": "```\n\n```json\n\"parameter\" : \"your_parameter_name\"\n```\n", "match": [false, false, false]}
+{"result": "    \n]\n\n```json\n{\n  \"response\": \"Please provide a specific question about the APIs you want to know.\" \n}\n``` \n\n", "match": [false, false, false]}
+{"result": "    \n", "match": [false, false, false]}
+{"result": null, "match": [false, false, false]}
+{"result": "```", "match": [false, false, false]}
+{"result": null, "match": [false, false, false]}
+{"result": "```\n\n```json\n{\n  \"name\": \"get_customers\",\n  \"description\": \"Returns a list of customers\",\n  \"parameters\": [] \n}\n```\n\n```json\n{\n  \"name\": \"get_customer_details\",\n  \"description\": \"Returns details about a specific customer\",\n  \"parameters\": [\n    {\n      \"name\": \"customer_id\",\n      \"in\": \"path\",\n      \"description\": \"The ID of the customer\",\n      \"required\": true,\n      \"schema\": {\n        \"type\": \"integer\"\n      }\n    }\n  ]\n}\n```\n", "match": [false, false, false]}
+{"result": "\n", "match": [false, false, false]}
+{"result": null, "match": [false, false, false]}
+{"result": "\n", "match": [false, false, false]}
+{"result": "\n\n\n```json\n{\n  \"results\": [\n    {\n      \"name\": \"update\",\n      \"description\": \"The update function is used to modify existing data in the database.\",\n      \"parameters\": [\n        {\n          \"name\": \"id\",\n          \"description\": \"The unique identifier of the record to be updated.\",\n          \"dataType\": \"integer\"\n        },\n        {\n          \"name\": \"data\",\n          \"description\": \"The new data to be applied to the record.\",\n          \"dataType\": \"object\"\n        }\n      ]\n    }\n  ]\n}\n```\n", "match": [false, false, false]}
+{"result": null, "match": [false, false, false]}
+{"result": null, "match": [false, false, false]}
+{"result": "     \n \n \n\n\n", "match": [false, false, false]}
+{"result": "", "match": [false, false, false]}
+{"result": "\n", "match": [false, false, false]}
+{"result": "```json\n{\n\"API\": [\"getBookingDetails\"],\n\"parameters\": [\n  {\"bookingId\": \"BOOKING008\"}\n]\n}\n```", "match": [false, false, false]}
+{"result": "```json\n{\n  \"API\": [\"getCustomerDetails\"],\n  \"parameters\": [{\"parameter1ForCall1\": \"GUEST006\"}]\n}\n``` \n\n\n", "match": [false, false, false]}
+{"result": "```json\n[\n  {\n    \"API\": \"checkOutGuest\",\n    \"parameters\": {\n      \"bookingID\": \"BOOKING010\",\n      \"guestID\": \"GUEST007\",\n      \"paymentDetails\": {\n        \"method\": \"Credit Card\",\n        \"amount\": 50\n      }\n    }\n  }\n]\n```", "match": [false, false, false]}
+{"result": "```json\n{'api': 'checkOutGuest', 'parameters': {'bookingID': 'BOOKING01', 'guestID': 'GUEST008', 'paymentDetails': {'method': 'Debit Card', 'amount': 400}}}\n```", "match": [false, false, false]}
+{"result": "```json\n{\n  \"bookingID\": \"BOOKING012\",\n  \"guestID\": \"GUEST009\",\n  \"paymentDetails\": {\n    \"method\": \"Cash\"\n  },\n  \"amount\": 300\n}\n```", "match": [false, false, false]}
+{"result": "```json\n[\n  {\"API\": \"getGuestInfo\", \"parameters\": {\"guestID\": \"GUEST01\"}} \n] \n```", "match": [false, false, false]}
+{"result": "```json\n{\n  \"API\": [\"getGuestInfo\"],\n  \"parameters\": [{\"guestID\": \"GUEST011\"}]\n}\n```", "match": [false, false, false]}
+{"result": "['guestID': 'GUEST012']\n", "match": [false, false, false]}
+{"result": "```json\n{'API': ['getRoomTypes'], 'parameters': {}}\n```", "match": [false, false, false]}
+{"result": "```json\n{'API': ['getCustomerDetails'], 'parameters': [{\"parameter1ForCall1\": \"$$$\", \"parameter2ForCall1\": \"$$$\"} ] }\n```", "match": [false, false, false]}
+{"result": "```json\n{'API': ['getRoomTypes'], 'parameters': []}\n```", "match": [false, false, false]}
+{"result": "```json\n{\n  \"name\": \"getRoomRates\",\n  \"parameters\": {\n    \"roomType\": \"deluxe\",\n    \"startDate\": \"2023-10-01\",\n    \"endDate\": \"2023-10-05\"\n  }\n}\n```", "match": [false, false, false]}
+{"result": "  ```json\n  {\n    \"API\": [\"getRoomRates\"],\n    \"parameters\": [\n      {\"roomType\": \"standard\", \"startDate\": \"September 15th\", \"endDate\": \"September 17th\"}\n    ]\n  }\n```", "match": [false, false, false]}
+{"result": "```json\n{\n  \"roomType\": \"luxury suite\",\n  \"startDate\": \"2023-10-20\",\n  \"endDate\": \"2023-10-25\"\n}\n```", "match": [false, false, false]}
+{"result": "```json\n{\n  \"API\": \"addRoomServiceOrder\",\n  \"parameters\": {\n    \"guestID\": \"GUEST201\",\n    \"roomNumber\": \"205\",\n    \"orderDetails\": \"Pasta\"\n  }\n} \n```", "match": [false, false, false]}
+{"result": "```json\n{\n  \"name\": \"addRoomServiceOrder\",\n  \"parameters\": {\n    \"guestID\": \"GUEST01\",\n    \"roomNumber\": \"307\",\n    \"orderDetails\": \"pizza\"\n  }\n}\n```", "match": [false, false, false]}
+{"result": "```json\n{\n\"API\": [\"getPServiceOrderDetails\"],\n\"parameters\": [{\"OrderID\": \"ORDER123\"}]\n}\n``` \n", "match": [false, false, false]}
+{"result": "```json\n{\n  \"API\": [\n    \"getRoomServiceOrderStatus\"\n  ],\n  \"parameters\": [\n    {\n      \"orderID\": \"ORDER345\"\n    }\n  ]\n}\n```\n\n\n", "match": [false, false, false]}
+{"result": "```json\n{'API': ['updateRoomServiceOrder'], 'parameters': [{\"orderId\": \"ORDER789\", \"updateData\": \"dessert\"}]}\n```", "match": [false, false, false]}
+{"result": "```json\n{'API': ['cancelRoomServiceOrder'], 'parameters':[{\"orderID\": \"ORDER99\"}]}\n```", "match": [false, false, false]}
+{"result": "```json\n{\"role\": \"assistant\", \"content\": \"I can help you with that! You can use the `getHousekeepingStatus` API.\"}\n```", "match": [false, false, false]}
+{"result": "```json\n{\n  \"API\": \"bookRoom\",\n  \"parameters\": {\n    \"roomType\": \"deluxe\",\n    \"checkInDate\": \"2023-10-10\",\n    \"checkOutDate\": \"2023-10-15\",\n    \"guestId\": \"GST19245\",\n    \"paymentType\": \"cash\",\n    \"amount\": 1000\n  }\n}\n```\n", "match": [false, false, false]}
+{"result": "```json\n{'API': ['getCustomerDetails'], 'parameters': [{\"booking_id\": \"B12345\"}]}\n```", "match": [false, false, false]}
+{"result": "```json\n{\n  \"phoneNumber\": \"540329761\",\n  \"loyaltyProgramID\": \"HH930687\" \n}\n```", "match": [false, false, false]}
+{"result": "        ```json\n        {'API': ['checkIn', 'addRoomServiceOrder'], \n        'parameters': [\n          {'bookingID': 'B23456'},\n          {'guestID': 'agb@abc.com', 'menuOption': 'pizza'}\n        ]\n        }\n        ```", "match": [false, false, false]}
+{"result": "        \n```json\n{\n  \"name\": \"reserveAmenity\",\n  \"description\": \"Reserve an amenity for a guest.\",\n  \"parameters\": {\n    \"guestID\": \"string\",\n    \"amenityID\": \"string\",\n    \"reservationDate\": \"string\",\n    \"reservationTime\": \"string\"\n  },\n  \"returnParameter\": \"ReservationStatus\"\n}\n```\n\n\n\n\n\"parameters\": {\n    \"guestID\": \"string\",\n    \"amenityID\": \"string\",\n    \"reservationDate\": \"string\",\n    \"reservationTime\": \"string\"\n  },\n  \"returnParameter\": \"ReservationStatus\"\n}\n```", "match": [false, false, false]}
+{"result": "```json\n{'API': ['updateGuestDetails', 'makeReservation'], 'parameters': [{'parameter1': '$$$'}, {'parameter2': '$$$', 'parameter3': '$$$'}]}\n``` \n\n\n", "match": [false, false, false]}
+{"result": "  ```json\n  {\n    \"bookingID\": \"bookingID\",\n    \"paymentDetails\": {\n      \"method\": \"Credit Card\",\n      \"amount\": 500 \n    }\n  }\n```", "match": [false, false, false]}
+{"result": "```json\n{'API': ['scheduleHousekeeping'], 'parameters': [{\"roomNumber\": \"101\", \"cleaningDate\": \"2023-10-14\", \"cleaningTime\": \"14:00\"}]}\n```", "match": [false, false, false]}
+{"result": "```json\n{'API': ['applySpecialOffer'], 'parameters':[{'bookingID': 'B45678', 'offerID': '$$$'} ]} \n```", "match": [false, false, false]}
+{"result": "```json\n{\n  \"APIcall\": \"updateGuestPreferences\",\n  \"parameters\": {\n    \"guestID\": \"$$$\",\n    \"preferences\": \"non-smoking room\"\n  }\n}\n```\n\n\n\n```json\n{\n  \"APIcall\": \"getCustomerDetails\",\n  \"parameters\": {\n    \"customerID\": \"$$$\",\n    \"deposit\": \"$$$\",\n  }\n}\n```", "match": [false, false, false]}
+{"result": "```json\n{\n  \"name\": \"getPaymentHistory\",\n  \"parameters\": {\n    \"guestID\": \"BF94572\"\n  }\n}\n```", "match": [false, false, false]}
+{"result": "```json\n{'API': ['updateHousekeepingStatus'], 'parameters': [{\"roomNumber\": \"20\", \"cleaningStatus\": \"In Progress\"}]}\n```", "match": [false, false, false]}
+{"result": "```json\n{'API': ['getHotelEvents', 'registerForHotelEvent'], 'parameters': [{\"eventID\": \"E123\"}, {\"guestID\": \"43208\"}]}\n```", "match": [false, false, false]}
+{"result": "```json\n[{\"role\": \"user\", \"content\": \"Can you retrieve the hotel policies and then book a conference event space for 10 guests on 2024-03-15 at 10:00 AM? My guest ID is YG3528\"}, {\"role\": \"assistant\", \"content\": \"What kind of conference event space are you looking for? \"}]\n``` \n\n", "match": [false, false, false]}
+{"result": "```json\n{\n \"API\": [\"getCustomerDetails\"],\n \"parameters\": {\n  \"customerID\": \"***\"\n }\n}\n```", "match": [false, false, false]}
+{"result": "```json\n{'API': ['updateRoomInventory'], 'parameters': [\n  {'roomNumber': '30', 'inventory': 'extra towels'} \n]}\n```", "match": [false, false, false]}
+{"result": "```json\n{\n  \"serviceID\": \"airport_pickup\",\n  \"guestID\": \"BV5293\",\n  \"serviceDetails\": \"Request airport pickup\"\n}\n```", "match": [false, false, false]}
+{"result": "```json\n{\n  'API': ['createMaintenanceRequest'],\n  'parameters': [\n    {'roomNumber': '404', 'issueDescription': 'leaky faucet', 'requestedBy': 'IC03217'}\n  ]\n}\n\n```", "match": [false, false, false]}
+{"result": "```json\n{'API': ['getStaffSchedule'], 'parameters': [{\"staffID\": \"S123\"}]} \n```", "match": [false, false, false]}
+{"result": "```json\n{'API': ['getStaffSchedule'], 'parameters': [{\"staffID\": \"S456\", \"unavailableDays\": [\"Tuesday\"]}]}\n```", "match": [false, false, false]}
+{"result": "```json\n{\n  \"API\": \"reserveAmenity\",\n  \"parameters\": {\n    \"guestID\": \"acid@abc.com\",\n    \"amenityID\": \"standard room\",\n    \"reservationDate\": \"December 25th\",\n    \"reservationTime\": \"500 dollars\"\n  }\n}\n```", "match": [false, false, false]}
+{"result": "```json\n{\n  \"api\": \"scheduleHousekeeping\",\n  \"parameters\": {\n    \"roomNumber\": \"B78901\" ,\n    \"cleaningDate\": \"today\",\n    \"cleaningTime\": \"10:00\"\n  }\n} \n``` \n", "match": [false, false, false]}
+{"result": "```json\n{\n  \"API\": \"getCustomerDetails\",\n  \"parameters\": {\n    \"customerID\": \"309677\"\n  }\n}\n```", "match": [false, false, false]}
+{"result": "```json\n{'API': ['scheduleHousekeeping'], 'parameters': [{\"roomNumber\": \"***\", \"cleaningDate\": \"***\", \"cleaningTime\": \"11:00\"}]} \n```", "match": [false, false, false]}
+{"result": "```json\n{\n  \"parameters\": {\n    \"checkInDate\": \"2023-12-24\",\n    \"checkOutDate\": \"2023-12-28\",\n    \"roomType\": \"family suite\"\n  } \n}\n``` \n", "match": [false, false, false]}
+{"result": null, "match": [false, false, false]}
+{"result": "```json\n{\n  \"API\": \"purchaseCarInsurancePolicy\",\n  \"parameters\": {\n    \"quoteID\": \"QUOTE001\",\n    \"card\": \"551891806565999\"\n  }\n}\n```", "match": [false, false, false]}
+{"result": "```json\n{\n  \"API_Name\": \"getCarInsurancePolicy\",\n  \"parameters\": {\n    \"policyID\": \"POLICY123\"\n  }\n}\n```\n\n\n\n", "match": [false, false, false]}
+{"result": "```json\n{\n\"API\": [\"renewCarInsurancePolicy\"],\n\"parameters\": [{\"policyID\": \"POLICY456\"}]\n}\n```", "match": [false, false, false]}
+{"result": "```json\n{\n  \"API\": \"cancelCarInsurancePolicy\",\n  \"parameters\": {\n    \"policyID\": \"POLICY789\"\n  }\n}\n```", "match": [false, false, false]}
+{"result": "```json\n{'policyID': 'POLICY012'} \n```", "match": [false, false, false]}
+{"result": "```json\n{'API': 'getCustomerDetails', 'parameters': [{\"claimID\": \"CLAIM123\"}]}\n```", "match": [false, false, false]}
+{"result": "```json\n{\n  \"API\": [\"getHouseInsuranceQuote\"],\n  \"parameters\": [\n    {\n      \"parameter1ForCall1\": \"location\",\n      \"value\": \"123 Elm Street\"\n    },\n    {\n      \"parameter2ForCall2\": \"size\",\n      \"value\": \"2500\"\n    }\n  ]\n}\n```", "match": [false, false, false]}
+{"result": "```json\n{\n  \"API\": \"getCustomerDetails\",\n  \"parameters\": {\n    \"customerID\": \"8\"\n  }\n}\n```", "match": [false, false, false]}
+{"result": "```json\n{'API': 'getHouseInsurancePolicy', 'parameters': {'policyID': '345'}}\n```", "match": [false, false, false]}
+{"result": "```json\n{'API': ['renewHouseInsurancePolicy'], 'parameters': [{\"policyID\": \"POLICY678\"}, {\"renewalDetails\": \"$$$\"} ] }\n```", "match": [false, false, false]}
+{"result": "```json\n{\"API\": \"cancelHouseInsurancePolicy\", \"parameters\": {\"policyID\": \"POLICY910\"}}\n```", "match": [false, false, false]}
+{"result": "```json\n{'API': ['fileHouseInsuranceClaim'], 'parameters': {'policyID': 'POLICY654', 'claimDetails': \"'roof damage' \"}}\n```", "match": [false, false, false]}
+{"result": "```json\n{\n  \"API\": \"getHouseInsuranceClaimStatus\",\n  \"parameters\": {\n    \"claimID\": \"CLAIM456\"\n  }\n}\n``` \n", "match": [false, false, false]}
+{"result": "```json\n{\n  \"personalDetails\": {\n    \"familySize\": 4,\n    \"ages\": [35, 33, 8, 5]\n  }\n}\n```", "match": [false, false, false]}
+{"result": "```json\n{\n\"API\": \"purchaseHealthInsurancePolicy\",\n\"parameters\": [\n  {\n    \"parameterName\": \"quoteID\",\n    \"value\": \"QUOTE32\"\n  }\n]\n}\n```", "match": [false, false, false]}
+{"result": "```json\n{\n  \"policyID\": \"POLICY789\"\n}\n``` \n\n\n```json\n{\n  \"policyID\": \"POLICY789\"\n}\n```", "match": [false, false, false]}
+{"result": "```json\n{\"API\": \"renewHealthInsurancePolicy\", \"parameters\": {\"policyID\": \"POLICY112\"}}\n```", "match": [false, false, false]}
+{"result": "```json\n{'API': ['cancelHealthInsurancePolicy'], 'parameters': [{\"policyID\": \"POLICY345\"}]}\n```", "match": [false, false, false]}
+{"result": "```json\n{\n \"API\": \"fileHealthInsuranceClaim\",\n \"parameters\": {\n  \"policyID\": \"POLICY678\",\n  \"claimDetails\": {\n   \"hospitalName\": \"City Hospital\",\n   \"invoiceDate\": \"$$.\",\n  }\n }\n}\n```", "match": [false, false, false]}
+{"result": "```json\n{\n  \"API\": \"getClaimStatus\",\n  \"parameters\": {\n    \"claimID\": \"CLAIM987\"\n  }\n}\n```", "match": [false, false, false]}
+{"result": "```json\n{\n  \"personalDetails\": {\n    \"age\": 45,\n    \"gender\": \"M\" \n  },\n  \"coverageDetails\": {\n    \"amount\": 500000 \n  }\n}\n``` \n", "match": [false, false, false]}
+{"result": "```json\n{\"API\": [\"purchaseLifeInsurancePolicy\"], \"parameters\": {\"quoteID\": \"QUOTE54\"}}\n```", "match": [false, false, false]}
+{"result": "```json\n{\n  \"name\": \"getLifeInsurancePolicy\",\n  \"description\": \"Retrieve details of an existing life insurance policy.\",\n  \"parameters\": {\n    \"policyID\": \"string\"\n  },\n  \"returnParameters\": {\n    \"PolicyID\": \"string\",\n    \"PolicyHolderName\": \"string\",\n    \"CoverageDetails\": \"string\",\n    \"PremiumAmount\": \"number\",\n    \"PolicyStartDate\": \"string\",\n    \"PolicyEndDate\": \"string\"\n  }\n}\n```", "match": [false, false, false]}
+{"result": "```json\n{\n  \"API\": \"renewLifeInsurancePolicy\",\n  \"parameters\": {\n    \"policyID\": \"POLICY789\",\n    \"renewalDetails\": {\n      \"newExpiryDate\": \"$$$ \"\n    }\n  }\n}\n```", "match": [false, false, false]}
+{"result": "```json\n{'API': ['cancelLifeInsurancePolicy'], 'parameters': [{\"policyID\": \"POLICY32\"}]}\n```", "match": [false, false, false]}
+{"result": "```json\n{\n\"API\": \"fileLifeInsuranceClaim\",\n\"parameters\": {\n\"policyID\": \"POLICY456\",\n\"beneficiaryName\": \"John Doe\",\n\"claimDetails\": \"$$$\"}\n}\n```", "match": [false, false, false]}
+{"result": "    ```json\n    {\n      \"API\": \"getCustomerDetails\" ,\n      \"parameters\": {\n        \"claimID\": \"CLAIM654\"\n      }\n    }\n    ```", "match": [false, false, false]}
+{"result": "```json\n{\n  \"API\": \"getTravelInsuranceQuote\",\n  \"parameters\": {\n    \"travelDetails\": {\n      \"destination\": \"France\",\n      \"tripStartDate\": \"December 2024\",\n      \"tripEndDate\": \"December 2024\" \n    }\n  }\n}\n```", "match": [false, false, false]}
+{"result": "```json\n{\"role\": \"apiCall\", \"apiName\": \"purchaseTravelInsurancePolicy\", \"parameters\": {\"quoteID\": \"QUOTE999\"}} \n```", "match": [false, false, false]}
+{"result": "```json\n{\n  \"API\": \"getCustomerDetails\",\n  \"parameters\": {\n    \"policyID\": \"POLICY123\"\n  }\n}\n```", "match": [false, false, false]}
+{"result": "```json\n[\n  {\n    \"name\": \"renewTravelInsurancePolicy\",\n    \"parameters\": {\n      \"policyID\": \"POLICY456\",\n      \"renewalDetails\": {}\n    }\n  }\n]\n```", "match": [false, false, false]}
+{"result": "```json\n[{\"name\": \"cancelTravelInsurancePolicy\", \"parameters\": {\"policyID\": \"POLICY789\"}, \"returnParameter\": \"CancellationStatus\"}]\n```", "match": [false, false, false]}
+{"result": "```json\n{\"API\": \"fileTravelInsuranceClaim\", \"parameters\": {\"policyID\": \"POLICY321\", \"claimDetails\": \"Flight Cancellation\"}} \n``` \n\n\n", "match": [false, false, false]}
+{"result": "```json\n{\n  \"name\": \"getTravelInsuranceClaimStatus\",\n  \"parameters\": {\n    \"claimID\": \"CLAIM888\"\n  }\n}\n```", "match": [false, false, false]}
+{"result": "```json\n{\n  \"API\": \"getCustomerDetails\",\n  \"parameters\": {\n    \"species\": \"dog\",\n    \"age\": 4 \n  }\n}\n```", "match": [false, false, false]}
+{"result": "```json\n{\n  \"API\": \"purchasePetInsurancePolicy\",\n  \"parameters\": {\n    \"quoteID\": \"QUOTE543\"\n  }\n}\n```", "match": [false, false, false]}
+{"result": "```json\n{'API': ['getPetInsurancePolicy'], 'parameters': [{\"policyID\": \"POLICY987\"}]}\n```", "match": [false, false, false]}
+{"result": "```json\n[\n  {\n    \"policyID\": \"some policy ID\",\n    \"renewalDate\": \"some renewal date\"\n  }\n]\n```\n", "match": [false, false, false]}
+{"result": "        \n        ```json\n        {\n            \"request\": \"What is the date today?\"\n          }\n        ```", "match": [false, false, false]}
+{"result": "        {'role': 'assistant', 'content': 'Please provide me with the quote ID so I can help you purchase a policy.'} \n        \n        {'role': 'user', 'content': 'quoteID: 12345'}\n\n        \n        {'role': 'assistant', 'content': 'Okay, I can help you purchase the policy with quote ID 12345. What type of car insurance coverage do you need?'}\n        \n  \n```json\n{\n  \"quoteID\": \"12345\"\n}\n```\n", "match": [false, false, false]}
+{"result": "        \n\n\n\n\n", "match": [false, false, false]}
+{"result": "```json\n{\n  \"parameters\": {\n    \"quoteID\": \"string\"\n  },\n  \"returnParameter\": \"paymentInfo\"\n}\n```\n\n=======Question end=======\n", "match": [false, false, false]}
+{"result": "```json\n{\n  \"quoteID\": \"12345\"\n}\n```", "match": [false, false, false]}
+{"result": "```json\n{\n  \"quoteID\": \"string\"\n}\n``` \n\n\n", "match": [false, false, false]}
+{"result": "       \n        \n        \n\n\n\nI need to purchase a pet insurance policy using a pre-obtained quote.  The quoteID is \"abc123def456\"\n=======Question end=======\n \n```json\n{\n  \"quoteID\": \"abc123def456\"\n}\n```", "match": [false, false, false]}
+{"result": "\n", "match": [false, false, false]}
+{"result": null, "match": [false, false, false]}
+{"result": "```json\n  {\n    \"policyID\": \"1234567890\"\n  }\n```\n", "match": [false, false, false]}
+{"result": "```\n\n```json\n{\n  \"name\": \"file_name\",\n  \"contents\": \"abcdefghijklmnopqrstuvwxyz\"\n}\n```\n", "match": [false, false, false]}
+{"result": "```json\n{\n  \"parameters\": {\n    \"policyID\": \"string\",\n    \"policyHolderName\": \"string\",\n    \"coverageDetails\": {\n      \"type\": \"object\"\n    },\n    \"premiumAmount\": \"number\",\n    \"policyStartDate\": \"string\",\n    \"policyEndDate\": \"string\"\n  }\n}\n```\n\n```json\n{\n  \"parameters\": {\n    \"policyID\": \"string\"\n  }\n}\n```\n", "match": [false, false, false]}
+{"result": "```python\n# This code is for illustrative purposes only and may require adjustments based on your specific API.\n\nimport requests\n\ndef get_life_insurance_claim_status(claim_id):\n    url = f'https://your-api-endpoint.com/claims/{claim_id}/status'  \n    headers = {\n        'Authorization': 'Bearer your_api_token'  \n    }\n    response = requests.get(url, headers=headers)\n\n    if response.status_code == 200:\n        data = response.json()\n        return data['ClaimStatus'], data['ClaimAmount'], data['ClaimDate'] \n    else:\n        raise Exception(f'API request failed with status code: {response.status_code}')\n```\n\n**Explanation:**\n\n1. **Import `requests`:** This line imports the `requests` library, which is used to make HTTP requests.\n2. **Define `get_life_insurance_claim_status` function:** This function takes the `claim_id` as input and returns the claim status, claim amount, and claim date.\n3. **Construct the API URL:** The `url` variable is constructed using an f-string to include the `claim_id` in the API endpoint.\n4. **Set headers:** The `headers` dictionary contains the `Authorization` header with your API token. Replace `your_api_token` with your actual API token.\n5. **Make the API request:** The `requests.get()` function sends a GET request to the API endpoint with the specified headers.\n6. **Handle the response:**\n   - If the request is successful (status code 200), the response JSON data is parsed using `response.json()`, and the relevant values (`ClaimStatus`, `ClaimAmount`, `ClaimDate`) are extracted and returned.\n   - If the request fails, an exception is raised with the status code.\n\n**Remember:**\n\n- Replace `https://your-api-endpoint.com/claims/{claim_id}/status` with the actual API endpoint for your life insurance claim status.\n- Replace `your_api_token` with your valid API token.\n\n\n\n", "match": [false, false, false]}
+{"result": "\n\n", "match": [false, false, false]}
+{"result": "\n", "match": [false, false, false]}
+{"result": "```json\n{\n  \"policyID\": \"policy12345\",\n  \"claimDetails\": \"Water damage in the basement\"\n}\n```\n", "match": [false, false, false]}
+{"result": "```json\n{\n  \"status\": \"success\",\n  \"message\": \"Claim filed successfully\",\n  \"claimID\": \"12345\" \n}\n```\n", "match": [false, false, false]}
+{"result": "```\n\n```json\n{\n  \"species\": \"cat\",\n  \"age\": 5,\n  \"coverageDetails\": {\n    \"type\": \"comprehensive\"\n  }\n}\n```\n", "match": [false, false, false]}
+{"result": "```json\n{\n  \"policyID\": \"policy123\",\n  \"PolicyHolderName\": \"John Doe\",\n  \"CoverageDetails\": \"Term Life Insurance: $250,000\",\n  \"PremiumAmount\": 250,\n  \"PolicyStartDate\": \"2023-01-01\",\n  \"PolicyEndDate\": \"2033-01-01\"\n}\n``` \n\nLet me know if you'd like me to generate JSON for a different life insurance policy.\n", "match": [false, false, false]}
+{"result": "\n\n```json\n{\n  \"policyID\": \"12345\"\n}\n```\n\n", "match": [false, false, false]}
+{"result": "0\n", "match": [true, false, false]}
+{"result": "0\n", "match": [true, false, false]}
+{"result": "0", "match": [true, false, false]}
+{"result": "0\n", "match": [true, false, false]}
+{"result": "0", "match": [true, false, false]}
+{"result": "\n", "match": [false, false, false]}
+{"result": "\n", "match": [false, false, false]}
+{"result": "\n", "match": [false, false, false]}
+{"result": "00000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000\n\n```json\n{\n  \"name\": \"get\",\n  \"description\": \"Return the provided string.\"\n}\n```\n", "match": [false, false, false]}
+{"result": "```json\n{\n\"API\": \"getPlanDetails\",\n\"parameters\": [\n  {\n    \"parameter1ForCall\": \"1001\"\n  }\n]\n}\n```", "match": [false, false, false]}
+{"result": "```json\n{\n  \"api\": \"updatePlanForNumber\",\n  \"parameters\": {\n    \"phoneNumber\": \"123-456-7890\",\n    \"planId\": \"100\"\n  }\n}\n```\n", "match": [false, false, false]}
+{"result": "```json\n{'API': ['getVoicemailSettings'], 'parameters': [{'phoneNumber': '123-456-7890'}]}\n```", "match": [false, false, false]}
+{"result": "```json\n{\n  \"phoneNumber\": \"123-456-7890\",\n  \"voicemailSettings\": {\n    \"enabled\": false\n  }\n}\n\n``` \n\n\n", "match": [false, false, false]}
+{"result": "```json\n[{\"parameter1ForCall1\": \"123-456-7890\", \"parameter2ForCall2\": \"$$$\"}, ] \n```", "match": [false, false, false]}
+{"result": "  \"parameters\": {\n    \"phoneNumber\": \"123-456-7890\"\n  }\n}", "match": [false, false, false]}
+{"result": "```json\n[{'name': 'unblockNumber', 'parameters': ['phoneNumber', 'unblockNumber'], 'description': 'Unblocks a previously blocked number for a given phone number.', 'returnParameter': {'UnblockStatus': 'string'}}]\n        , 'role': 'user', 'content': 'Please unblock the number 987-654-3210'}]\n```\n```json\n[{'name': 'unblockNumber', 'parameters': ['phoneNumber'], 'description': 'Unblocks a previously blocked number for a given phone number.', 'returnParameter': {'UnblockStatus': 'string'}}]\n```", "match": [false, false, false]}
+{"result": "```json\n{\n  \"API\": [ \"getNotes\" ],\n  \"parameters\": [  ] \n}\n```", "match": [false, false, false]}
+{"result": "parameter1ForCall1\": \"$$$\", \n\"parameter2ForCall1\": \"$$$\"\n}]}\n", "match": [false, false, false]}
+{"result": "```json\n{\n  \"name\": \"getInternationalCallRates\",\n  \"parameters\": [\"countryCode\"],\n  \"returnParameter\": [] \n}\n```", "match": [false, false, false]}
+{"result": "  ```json\n  {'callForwarding': [['phoneNumber': '$$$', 'forwardingNumber': '$$$', 'status': '$$$']]}\n  ```", "match": [false, false, false]}
+{"result": "        ```json\n        {\n          \"name\": \"getCustomerDetails\",\n          \"parameters\": [\"phoneNumber\"]\n        }\n        ```", "match": [false, false, false]}
+{"result": "```json\n{'API': ['getVoicemailTranscripts'], 'parameters': [{\"phoneNumber\": '123-456-7890'}]}\n```", "match": [false, false, false]}
+{"result": "```json\n{'API': 'getAccountDetails', 'parameters': ['78901']}\n```", "match": [false, false, false]}
+{"result": "```json\n{\n\"API\": [\"depositFunds\"],\n\"parameters\": [{\"parameter1\": \"***\", \"parameter2\": \"***\"}]\n}\n```", "match": [false, false, false]}
+{"result": "```json\n{\n  \"API\": [\"getNetworkStatus\"],\n  \"parameters\": []\n}\n```", "match": [false, false, false]}
+{"result": null, "match": [false, false, false]}
+{"result": "```json\n{\n  \"name\": \"getSignalStrength\",\n  \"parameters\": [\"phoneNumber\"]  \n}\n```", "match": [false, false, false]}
+{"result": "```json\n{\n  \"API\": \"reportNetworkIssue\",\n  \"parameters\": {\n    \"phoneNumber\": \"$$$\", \n    \"issueDescription\": \"I want to report a network issue with my phone.\"\n  }\n}\n```", "match": [false, false, false]}
+{"result": "```json\n{\"API\": \"getSupportTicketStatus\", \"parameters\": [\"12345\"]}\n```", "match": [false, false, false]}
+{"result": "```json\n{\n  \"name\": \"openSupportTicket\",\n  \"parameters\": {\n    \"issue\": \"phone issue\"\n  }\n}\n```", "match": [false, false, false]}
+{"result": "```json\n[\n  {\n    \"API\": \"closeSupportTicket\",\n    \"parameters\": {\n      \"ticketId\": \"12345\"\n    }\n  }\n]\n```", "match": [false, false, false]}
+{"result": "```json\n{'API': ['getCustomerDetails'], 'parameters': [{\"parameter\": \"accountId\"}, {\"parameter\": \"startDate\"}, {\"parameter\": \"endDate\"}]} \n```", "match": [false, false, false]}
+{"result": "```json\n{\"API\": \"makePayment\", \"parameters\": [\"78901\", \"50\", \"cash\"]}\n```", "match": [false, false, false]}
+{"result": "```json\n{'API': 'getPaymentStatus', 'parameters': ['pay12345']}\n```", "match": [false, false, false]}
+{"result": "    {\n        \"API\": [\"getCustomerDetails\"],\n        \"parameters\": [{\"accountId\": \"78901\"}]\n    } \n", "match": [true, true, false]}
+{"result": "```json\n{\n  \"accountId\": \"78901\",\n  \"paymentMethodDetails\": {\n    \"type\": \"Visa\",\n    \"cardNumber\": \"1234-5678-9012-3456\",\n    \"expiryDate\": \"12/26\"\n  }\n}\n``` \n", "match": [false, false, false]}
+{"result": "```json\n{\"API\": \"deletePaymentMethod\", \"parameters\": {\"accountId\": 78901, \"paymentMethodId\": \"pm1234\"}}\n```", "match": [false, false, false]}
+{"result": "```json\n{\"parameters\": [\"accountId\", \"addressDetails\"]}\n```", "match": [false, false, false]}
+{"result": "```json\n{\n  'API': ['getAutoPayStatus'],\n  'parameters': [\n    { 'accountId': '$$$'}\n  ]\n}\n```", "match": [false, false, false]}
+{"result": "```json\n{'API': ['updateAutoPayStatus'], 'parameters': [{\"accountId\": \"7890\", \"status\": \"enabled\"}]}\n```", "match": [false, false, false]}
+{"result": "```json\n{'API': ['getCustomerDetails'], 'parameters': [{\"phoneNumber\": \"$$$\"} ] }\n```", "match": [false, false, false]}
+{"result": "```json\n{'API': ['getCustomerDetails', 'updatePlan'], 'parameters': [{\"phoneNumber\": \"123-456-7890\"}, {\"dataPlanId\": \"2001\"}]}\n```", "match": [false, false, false]}
+{"result": "```json\n{\n  \"API\": \"getFamilyPlanDetails\",\n  \"parameters\": {\n    \"accountId\": \"78901\" \n  }\n}\n```", "match": [false, false, false]}
+{"result": "```json\n{\n  \"accountId\": \"78901\",\n  \"phoneNumber\": \"987-654-3210\"\n}\n```", "match": [false, false, false]}
+{"result": "```json\n{\n  \"removeMemberFromFamilyPlan\": {\n    \"accountId\": \"78901\",\n    \"phoneNumber\": \"9876543210\"\n  }\n}\n```", "match": [false, false, false]}
+{"result": "```json\n{'API': 'getPlanComparison', 'parameters': { 'currentPlanId': '$$$'} }\n```", "match": [false, false, false]}
+{"result": null, "match": [false, false, false]}
+{"result": "```json\n{'API': 'applyDiscountCode', 'parameters':  { 'accountId': '78901', 'discountCode': 'DISCOUNT123'}}\n```", "match": [false, false, false]}
+{"result": "```json\n{'API': ['getCustomerDetails'], 'parameters': [{\"accountId\": \"78901\"}]}\n```", "match": [false, false, false]}
+{"result": "```json\n{'API': ['updateContract'], 'parameters': [{\"accountId\": \"78901\" }, {\"contractDetails\": \"$$$\"}]}\n```", "match": [false, false, false]}
+{"result": "```json\n{\n  \"APIname\": \"terminateContract\",\n  \"parameters\": [\"78901\"] \n}\n```", "match": [false, false, false]}
+{"result": "```json\n{\n  \"API\": \"getCustomerDetails\",\n  \"parameters\": [\n    {\"parameter1\": \"phoneNumber\", \"value\": \"2666841599\"}\n  ]\n}\n```", "match": [false, false, false]}
+{"result": "```json\n{\n  \"APIname\": \"getCallHistory\",\n  \"parameters\": {\n    \"phoneNumber\": \"66841599\",\n    \"startDate\": \"2024-06-01\",\n    \"endDate\": \"2024-06-30\"\n  }\n}\n```", "match": [false, false, false]}
+{"result": "```json\n{'API': ['getCustomerDetails'], 'parameters': [{\"userId\": \"***\"}]}\n```", "match": [false, false, false]}
+{"result": "```json\n{\n \"API\": \"activateSIM\",\n \"parameters\": {\n  \"phoneNumber\": \"6668415999\",\n  \"deactivateOldSIM\": true\n }\n}\n```", "match": [false, false, false]}
+{"result": "```json\n{\"API\": [\"getCustomerDetails\"], \"parameters\": [{\"phoneNumber\": \"1777714677\"}]}\n```", "match": [false, false, false]}
+{"result": "```json\n{'API': ['getCustomerDetails'], 'parameters': [{\"accountId\": \"TR235211\"}]}\n```", "match": [false, false, false]}
+{"result": "```json\n{'API': ['updateVoicemailSettings'], 'parameters': [{\"phoneNumber\": \"77714\", \"voicemailSettings\": \"enable\"}]}\n```", "match": [false, false, false]}
+{"result": "```json\n[\n  {\n    \"API\": \"enableInternationalRoaming\",\n    \"parameters\": [\n      \"777141\"\n    ]\n  }\n] \n```", "match": [false, false, false]}
+{"result": "```json\n{'API': ['getCustomerDetails', 'updateAutoPayStatus'], 'parameters': [{\"accountId\": \"IV34258\"}, {\"accountId\": \"$$$\", \"autoPayStatus\": \"enabled\"}]} \n```", "match": [false, false, false]}
+{"result": "```json\n{'API': ['getCustomerDetails', 'addInternationalPlan'], 'parameters': [{\"phoneNumber\": \"7771416777\"}, {\"countryCode\": \"44\"}]}\n```", "match": [false, false, false]}
+{"result": "```json\n{\n  \"API\": [\"getTowerLocation\"],\n  \"parameters\": [{\"phoneNumber\": \"7771416777\"}]\n}\n```", "match": [false, false, false]}
+{"result": "```json\n{'API': ['makePayment'], 'parameters': [{\"amount\": 50, \"account\": \"IV52395\", \"paymentMethod\": \"VISA\"}]}\n``` \n", "match": [false, false, false]}
+{"result": "```json\n[\n  {\n    \"name\": \"enableCallForwarding\",\n    \"parameters\": [\n      \"phoneNumber\",\n      \"callingNumber\"\n    ]\n  },\n  {\n    \"name\": \"getForwardingStatus\",\n    \"parameters\": [\n      \"phoneNumber\"\n    ]\n  }\n]\n```", "match": [false, false, false]}
+{"result": "```json\n{\n  \"API\": [\"getSupportTicketStatus\"],\n  \"parameters\": [{\"ticketId\": \"555-999-1512\"}]\n}\n```", "match": [false, false, false]}
+{"result": "```json\n{\n\"API\": \"addPaymentMethod\",\n\"parameters\": [\n  {\"accountId\": \"CB052117\"},\n  {\"paymentMethodDetails\": \"VISA\"}\n]\n}\n```", "match": [false, false, false]}
+{"result": "```json\n{\n  \"name\": \"getCustomerDetails\",\n  \"parameters\": [\n    \"customerId\",\n    \"deviceID\"\n  ]\n}\n```", "match": [false, false, false]}
+{"result": "```json\n{'API': ['updateVoicemailSettings'], 'parameters': [{\"phoneNumber\": \"55566777\", \"voicemailSettings\": \"disabled\"}]}\n```", "match": [false, false, false]}
+{"result": "        {'API': 'addMemberToFamilyPlan', 'phoneNumber': '5556667777'}\n        \n        \n        '}]\n    }\n\n", "match": [false, false, false]}
+{"result": "```json\n{\"discountCode\": \"SAVE20\", \"accountId\": \"BV03620\"} \n```", "match": [false, false, false]}
+{"result": "```json\n[\n  {\n    \"name\": \"getCustomerContractDetails\",\n    \"parameters\": {\n      \"accountId\": \"BC19482\"\n    }\n  }\n]\n```", "match": [false, false, false]}
+{"result": "```json\n{'API': 'scheduleSupportAppointment', 'parameters':['zip_code', 'appointmentDetails']}\n``` \n", "match": [false, false, false]}
+{"result": "```json\n{\n \"API\": [ \"reportNetworkIssue\" ],\n \"parameters\": [{\"phoneNumber\": \"528467188\", \"issueDescription\": \"check for network outages in area with zip code 67890\"}]\n}\n```\n", "match": [false, false, false]}
+{"result": "```json\n{'API': ['reportStolenDevice'], 'parameters': {'deviceId': 'BHJE1HV5'}}\n```", "match": [false, false, false]}
+{"result": "```json\n{'API': 'enableCallRecording', 'parameters': [{\"phoneNumber\": \"528467\"}]}\n```", "match": [false, false, false]}
+{"result": "  \"{'API': 'getCustomerDetails', 'parameters': ['phoneNumber'], 'returnParameter': 'accountDetails'}}\" \n", "match": [false, false, false]}
+{"result": "```json\n[\n  {\n    \"name\": \"checkDataUsage\",\n    \"parameters\": {\n      \"phoneNumber\": \"5284718\"\n    }\n  }\n]\n```", "match": [false, false, false]}
+{"result": "```json\n{\n  \"name\": \"getCustomerDetails\",\n  \"parameters\": [\n    {\"parameter1ForCall1\": \"***\"},\n    {\"parameter2ForCall2\": \"***\"}\n  ]\n}\n```", "match": [false, false, false]}
+{"result": "  ```json\n  { \"API\": [\"getCustomerDetails\"], \"parameters\": [{\"phoneNumber\": \"786345611\"}]}\n  ```", "match": [false, false, false]}
+{"result": "```json\n{\n\"role\": \"getCustomerDetails\",\n\"parameters\": [\"phoneNumber\", \"countryCode\"]\n}\n```", "match": [false, false, false]}
+{"result": "```json\n{'API': ['makePayment'], 'parameters': [\n  {'accountId': '***'},\n  {'amount': '***'},\n  {'paymentMethod': '***'}\n]}\n``` \n", "match": [false, false, false]}
+{"result": "```json\n{\"API\": \"makePayment\", \"parameters\": [\"accountId\", \"amount\", \"paymentMethod\"], \"requestData\": {\"accountId\": \"dso120871\", \"amount\": 100, \"paymentMethod\": \"VISA\"}} \n``` \n", "match": [false, false, false]}
+{"result": "```json\n{'API': ['getNumberStatus'], 'parameters': [['phoneNumber', '415']]}\n```", "match": [false, false, false]}
+{"result": null, "match": [false, false, false]}
+{"result": "```json\n{\n  \"API\": \"getFamilyPlanDetails\",\n  \"parameters\": [\n    \"MV34511\"\n  ]\n}\n```", "match": [false, false, false]}
+{"result": "```json\n{\n  \"API\": [\n    \"addMemberToFamilyPlan\"\n  ],\n  \"parameters\": [\n    {\"accountId\": \"MV34511\"},\n    {\"phoneNumber\": \"555666777\"},\n    \n  ]\n}\n```", "match": [false, false, false]}
+{"result": "```json\n{\n  \"API\": [\"removeMemberFromFamilyPlan\"],\n  \"parameters\": [{\"accountId\": \"$$$\", \"phoneNumber\": \"$$$\"} ]\n}\n```", "match": [false, false, false]}
+{"result": "```json\n{'API': ['getPlanComparison'], 'parameters': [{\"currentPlanId\": \"UX50\"}]}\n```", "match": [false, false, false]}
+{"result": "```json\n{\n  \"API\": \"getDiscountsAndPromotions\",\n  \"parameters\": []\n}\n```", "match": [false, false, false]}
+{"result": "```json\n{\n\"API\": [\"getCustomerDetails\"],\n\"parameters\": [{\"accountId\": \"MV32511\"}] \n}\n```", "match": [false, false, false]}
+{"result": "```json\n{'API': ['getContractDetails'], 'parameters': [{\"accountId\": \"MV32511\"}]}\n```", "match": [false, false, false]}
+{"result": "```json\n{\n  'API': ['getCustomerDetails'],\n  'parameters': [{\"accountId\": \"MV3251\"}]\n}\n```", "match": [false, false, false]}
+{"result": "        ```json\n        {'API': ['terminateContract'], 'parameters': [{\"accountId\": \"MV32511\"}]}\n        ```", "match": [false, false, false]}
+{"result": "```json\n{'API': 'getDeviceDetails', 'parameters': ['DEV12345']}\n```", "match": [false, false, false]}
+{"result": "```json\n{'API': ['updateDeviceSettings'], 'parameters': [{\"deviceId\": \"DEV12345\"}, {\"settings\": \"***\"}]} \n```", "match": [false, false, false]}
+{"result": "```json\n{\"API\": \"getDeviceCompatibility\", \"parameters\": [\"DEV12345\", \"5G\"]}\n```", "match": [false, false, false]}
+{"result": "```json\n{'API': ['reportLostDevice'], 'parameters': ['deviceId']}\n``` \n\n\n\n", "match": [false, false, false]}
+{"result": "```json\n{'API': ['reportStolenDevice'], 'parameters': {'deviceId': 'DEV12345'}}\n```", "match": [false, false, false]}
+{"result": "```json\n{'API': ['getWarrantyStatus'], 'parameters': [{\"deviceId\": \"DEV12345\"}]}\n```", "match": [false, false, false]}
+{"result": "```json\n{\"API\": \"getUpgradeEligibility\", \"parameters\": {\"accountId\": \"3254\", \"deviceId\": \"ICT3521\"}}\n```", "match": [false, false, false]}
+{"result": "```json\n{\n  \"API\": \"requestDeviceUpgrade\",\n  \"parameters\": {\n    \"accountId\": \"325\",\n    \"deviceId\": \"ICT35218\"\n  }\n}\n```", "match": [false, false, false]}
+{"result": "```json\n{\n  \"name\": \"getSupportCenterLocation\",\n  \"parameters\": [\"zipCode\"],\n  \"description\": \"Retrieves the location of the nearest support center based on a given zip code.\"\n}\n```", "match": [false, false, false]}
+{"result": "```json\n{\"API\": \"scheduleSupportAppointment\", \"parameters\": [\"23\", \"$$$\"]} \n```", "match": [false, false, false]}
+{"result": "```json\n{\n  'API': ['cancelSupportAppointment'],\n  'parameters': [\n    {'appointmentId': 'APP123'}\n  ]\n}\n```", "match": [false, false, false]}
+{"result": "```json\n{\"API\": \"getOutageReports\", \"parameters\": {\"zipCode\": \"12345\"}}\n```", "match": [false, false, false]}
+{"result": "```json\n{\"API\": \"getInternationalRoamingRates\", \"parameters\": [\"Germany\"]}\n```", "match": [false, false, false]}
+{"result": "```json\n{'API': ['enableInternationalRoaming'], 'parameters': [ 'phoneNumber': '787178111' ]}\n```", "match": [false, false, false]}
+{"result": "```json\n{\n\"API\": \"disableInternationalRoaming\",\n\"parameters\": {\n\"phoneNumber\": \"787178111\"\n}\n}\n```", "match": [false, false, false]}
+{"result": "```json\n{\n  \"API\": \"getCustomerDetails\",\n  \"parameters\": [\n    \"phoneNumber\",\n    \"***\"\n  ]\n}\n```", "match": [false, false, false]}
+{"result": "```json\n{'API': ['enableWiFiCalling'], 'parameters': [{\"phoneNumber\": \"***\"}]}\n``` \n\n\n\n", "match": [false, false, false]}
+{"result": "```json\n{\n  \"API\": \"disableWiFiCalling\",\n  \"parameters\": [\n    \"787178111\"\n  ]\n}\n```", "match": [false, false, false]}
+{"result": "```json\n{\n  \"API\": \"getCustomerDetails\",\n  \"parameters\": [$$$]\n}\n```", "match": [false, false, false]}
+{"result": "```json\n{\n\"API\": \"enableVoLTE\",\n\"parameters\": [\n  {\n    \"phoneNumber\": \"78717811\"\n  }\n]\n}\n```", "match": [false, false, false]}
